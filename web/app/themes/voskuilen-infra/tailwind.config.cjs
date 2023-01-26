@@ -22,7 +22,9 @@ module.exports = {
       fontFamily: {
         'sans': 'Sofia Pro',
       },
-      colors: {},
+      colors: {
+        primary: '#D0103A',
+      },
     },
   },
   plugins: [],
