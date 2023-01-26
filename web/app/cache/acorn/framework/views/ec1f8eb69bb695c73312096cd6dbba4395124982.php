@@ -2,6 +2,7 @@
   <a class="brand" href="<?php echo e(home_url('/')); ?>">
     <?php echo $siteName; ?>
 
+    <h1 class="text-7xl font-bold">Door mensen,</h1>
   </a>
 
   <?php if(has_nav_menu('primary_navigation')): ?>
