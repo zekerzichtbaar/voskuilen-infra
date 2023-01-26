@@ -1,0 +1,1 @@
+[26-Jan-2023 13:14:38 UTC] PHP Fatal error:  Class App\Options\Opties contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Log1x\AcfComposer\Contracts\Field::fields) in /Users/thijsbrons/Sites/voskuilen-infra/web/app/themes/voskuilen-infra/app/Options/Opties.php on line 8
