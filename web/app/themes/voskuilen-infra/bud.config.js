@@ -28,7 +28,7 @@ export default async (app) => {
      * Matched files trigger a page reload when modified
      * @see {@link https://bud.js.org/docs/bud.watch/}
      */
-    .watch(['resources/views', 'app'])
+    .watch(["resources/views/**/*", "app/**/*"])
 
     /**
      * Proxy origin (`WP_HOME`)
@@ -40,13 +40,13 @@ export default async (app) => {
      * Development origin
      * @see {@link https://bud.js.org/docs/bud.serve/}
      */
-    .serve('http://0.0.0.0:3000')
+    .serve('http://voskuilen-infra.test:3000')
 
     /**
      * URI of the `public` directory
      * @see {@link https://bud.js.org/docs/bud.setPublicPath/}
      */
-    .setPublicPath('/app/themes/sage/public/')
+    .setPublicPath('/app/themes/voskuilen-infra/public/')
 
     /**
      * Generate WordPress `theme.json`
