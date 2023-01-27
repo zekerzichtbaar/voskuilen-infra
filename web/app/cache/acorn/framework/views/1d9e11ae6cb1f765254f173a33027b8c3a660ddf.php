@@ -1,5 +1,5 @@
 <section class="relative border-[30px] border-white">
-        <div class="<?php echo e($type = "header" ? "pt-44" : ""); ?>">
+        <div class="<?php echo e($type = "header" ? "pt-52" : ""); ?>">
             <?php if($background = "bg_image"): ?>
                 <?php if($bg_image): ?><?php echo wp_get_attachment_image( $bg_image['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover"] ); ?><?php endif; ?>
                 <div class="absolute inset-x-0 bg-gradient-to-t from-black/70 to-transparent h-1/2 bottom-0 z-10"></div>
