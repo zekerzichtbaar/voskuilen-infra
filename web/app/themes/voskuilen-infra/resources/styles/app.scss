@@ -29,12 +29,16 @@ section {
   .menu-item-has-children {
     &::after {
         content: url("../images/icon-arrow.svg");
-        @apply absolute -right-6 mt-px h-auto w-5;
+        @apply absolute -right-6 mt-px h-auto w-5 transition duration-300 ease-in-out;
     }
 
     &:hover {
         .sub-menu {
             @apply opacity-100 visible translate-y-4 z-30;
+        }
+
+        &::after {
+            @apply -rotate-45;
         }
     }
 }
@@ -55,3 +59,35 @@ section {
 .button-secondary {
     @apply bg-black;
 }
+
+.icon-left {
+    &--line {
+      &:nth-child(1) {
+        @apply transform rotate-45 translate-y-[0.290rem];
+      }
+  
+      &:nth-child(2) {
+        @apply opacity-0;
+      }
+  
+      &:nth-child(3) {
+        @apply transform -rotate-45 -translate-y-[0.290rem];
+      }
+    }
+  }
+
+.icon-right {
+    &--line {
+      &:nth-child(1) {
+        @apply transform -rotate-45 translate-y-[0.290rem];
+      }
+  
+      &:nth-child(2) {
+        @apply opacity-0;
+      }
+  
+      &:nth-child(3) {
+        @apply transform rotate-45 -translate-y-[0.290rem];
+      }
+    }
+  }
