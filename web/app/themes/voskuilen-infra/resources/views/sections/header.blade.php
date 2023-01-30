@@ -1,7 +1,7 @@
 <header class="banner fixed top-0 z-40 w-full">
   <div class="max-w-[95vw] md:max-w-[80vw] mx-auto text-white">
-    <div class="flex justify-between items-center md:items-end">
-      <a class="brand" href="{{ home_url('/') }}">
+    <div class="flex justify-between items-center pt-[50px]">
+      <a class="brand -mt-[50px]" href="{{ home_url('/') }}">
         <img class="w-20 md:w-auto h-auto" src="{{ asset('images/logo.svg') }}">
       </a>
 
@@ -12,7 +12,7 @@
       @endif
 
       <div class="flex justify-center items-center gap-4 border border-white px-6 py-3 md:px-8 md:py-6">
-        <span class="font-black uppercase">Menu</span>
+        <span class="font-black uppercase h-5">Menu</span>
         <div class="flex flex-col gap-1">
           <div class="w-6 h-[3px] bg-white"></div>
           <div class="w-6 h-[3px] bg-white"></div>

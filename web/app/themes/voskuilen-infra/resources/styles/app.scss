@@ -27,9 +27,11 @@ section {
   }
 
   .menu-item-has-children {
+    @apply pr-8;
+
     &::after {
         content: url("../images/icon-arrow.svg");
-        @apply absolute -right-6 mt-px h-auto w-5;
+        @apply absolute top-1/2 -translate-y-1/2 right-0 h-6 w-6;
     }
 
     &:hover {
