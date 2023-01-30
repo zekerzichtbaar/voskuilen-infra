@@ -1,7 +1,7 @@
 <header class="banner fixed top-0 z-40 w-full border-x-[30px] border-white">
   <div class="container mx-auto text-white">
-    <div class="flex justify-between items-center pt-[60px]">
-      <a class="brand -mt-[60px]" href="{{ home_url('/') }}">
+    <div class="flex justify-between items-center pt-[50px]">
+      <a class="brand -mt-[50px]" href="{{ home_url('/') }}">
         <img class="w-20 md:w-auto h-auto" src="{{ asset('images/logo.svg') }}">
       </a>
 
