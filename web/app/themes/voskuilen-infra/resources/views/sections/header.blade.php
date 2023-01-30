@@ -11,12 +11,19 @@
         </nav>
       @endif
 
-      <div class="flex justify-center items-center gap-4 border border-white px-6 py-3 md:px-8 md:py-6">
-        <span class="font-black uppercase h-5">Menu</span>
-        <div class="flex flex-col gap-1">
-          <div class="w-6 h-[3px] bg-white"></div>
-          <div class="w-6 h-[3px] bg-white"></div>
-          <div class="w-6 h-[3px] bg-white"></div>
+      <div id="menu" class="hamburger flex justify-center items-center gap-4 border border-white px-6 py-3 md:px-8 md:py-6 cursor-pointer transition duration-300 ease-in-out">
+        <span class="font-black uppercase">Menu</span>
+        <div id="hamburger" class="flex">
+          <div class="icon-left">
+            <span class="block w-4 h-[3px] transition duration-300 ease-in-out bg-white"></span>
+            <span class="block w-4 h-[3px] mt-[6px] transition duration-300 ease-in-out bg-white"></span>
+            <span class="block w-4 h-[3px] mt-[6px] transition duration-300 ease-in-out bg-white"></span>
+          </div>
+          <div class="icon-right -ml-1.5">
+            <span class="block w-4 h-[3px] transition duration-300 ease-in-out bg-white"></span>
+            <span class="block w-4 h-[3px] mt-[6px] transition duration-300 ease-in-out bg-white"></span>
+            <span class="block w-4 h-[3px] mt-[6px] transition duration-300 ease-in-out bg-white"></span>
+          </div>
         </div>
       </div>
     </div>
