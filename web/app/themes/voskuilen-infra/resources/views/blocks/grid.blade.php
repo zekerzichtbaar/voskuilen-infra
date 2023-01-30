@@ -11,9 +11,11 @@
         @foreach ($grid_items as $grid_item)
             <div class="bg-white {{ $position[$loop->index] }}">
                 @if($grid_item['acf_fc_layout'] == 'project')
-                    <div class="relative h-full w-full p-10">
-                        {{ wp_get_attachment_image(get_post_thumbnail_id(), 'large', false, ['class' => 'absolute inset-0 object-center']) }}
-                    </div>
+                    @php($projects = get_post_or_latest())
+                    @while($projects->have_posts()) @php($projects->the_post())
+                        @includeFirst(['partials.content-' . get_post_type()])
+                    @endwhile
+                    @php(wp_reset_postdata())
                 @elseif($grid_item['acf_fc_layout'] == 'page_links')
                     <div class="p-20">
                         <h2 class="text-3xl font-bold">{{ $grid_item['title'] }}</h2>
@@ -27,6 +29,6 @@
             </div>
         @endforeach
         <pre>
-        @php(print_r($grid_items))
+        {{-- @php(print_r($grid_items)) --}}
     </div>
 </section>
