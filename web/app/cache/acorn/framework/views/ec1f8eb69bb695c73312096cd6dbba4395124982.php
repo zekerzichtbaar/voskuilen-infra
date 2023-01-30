@@ -58,9 +58,20 @@
           }
         ?>
       <img class="menu-image absolute inset-0 w-full h-full z-10 object-cover" src="<?= \Roots\asset('images/menu-placeholder.png'); ?>">
-      <div class="flex flex-col justify-center h-full">
+      <div class="absolute flex flex-col justify-center h-full">
         <h3 class="text-white font-bold z-30"><?php echo get_field('title', 'option'); ?></h3>
         <span class="text-white/70 z-30"><?php echo get_field('menu_content', 'option'); ?></span>
+        <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.button','data' => ['class' => 'z-30 mt-6 md:mt-10','type' => 'primary','href' => ''.e(home_url('/contact')).'']]); ?>
+<?php $component->withName('button'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['class' => 'z-30 mt-6 md:mt-10','type' => 'primary','href' => ''.e(home_url('/contact')).'']); ?>Neem contact op <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
       </div>
     </div>
   </div>
