@@ -40,7 +40,7 @@ section {
         }
 
         &::after {
-            @apply -rotate-45;
+            @apply -rotate-180;
         }
     }
 }
