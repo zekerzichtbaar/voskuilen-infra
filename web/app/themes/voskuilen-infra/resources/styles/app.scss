@@ -15,7 +15,12 @@ h3 {
 section {
     @apply py-12 md:py-24 lg:py-32;
 }
+.container {
+    padding-left: 60px;
+    padding-right: 60px;
 
+    @apply 2xl:max-w-7xl;
+}
 #menu-primary-navigation {
     > li {
         @apply relative py-4;
@@ -46,7 +51,7 @@ section {
 }
 
 .button {
-    @apply relative inline-flex gap-4 justify-center items-center text-white font-black text-base px-8 py-4;
+    @apply relative inline-flex gap-4 justify-center items-center text-white uppercase font-bold text-base px-8 py-4 tracking-wide;
 
     &::after {
         content: url("../images/arrow-right.svg");
