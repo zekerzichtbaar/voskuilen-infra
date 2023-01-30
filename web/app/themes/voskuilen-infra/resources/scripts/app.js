@@ -11,7 +11,9 @@ domReady(async () => {
     $('#hamburger').children('.icon-left').children('span').toggleClass('icon-left--line');
     $('#hamburger').children('.icon-right').children('span').toggleClass('icon-right--line');
     $('#menuScreen').toggleClass('-translate-y-full opacity-0');
-    $('.nav-primary').fadeToggle('fast');
+    if ($(window).width() >= 1024) {
+      $('.nav-primary').fadeToggle('fast');
+    }
   })
 
   // MENU IMAGE
