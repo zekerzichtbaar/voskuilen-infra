@@ -1,7 +1,7 @@
-<header class="banner fixed top-0 z-30 w-full border-x-[30px] border-transparent">
+<header class="banner fixed md:top-12 z-30 w-full md:border-x-[30px] border-transparent">
   <div class="container mx-auto text-white">
-    <div class="flex justify-between items-center pt-[50px]">
-      <a class="brand -mt-[50px]" href="<?php echo e(home_url('/')); ?>">
+    <div class="flex justify-between items-center">
+      <a class="brand md:-mt-[50px]" href="<?php echo e(home_url('/')); ?>">
         <img class="w-20 md:w-auto h-auto" src="<?php echo e(asset('images/logo.svg')); ?>">
       </a>
 
@@ -32,22 +32,22 @@
 </header>
 <div id="menuScreen" class="fixed -translate-y-full opacity-0 w-full z-20 h-screen bg-black transition duration-300 ease-in-out">
   <div class="container">
-    <div class="flex md:gap-40 items-center h-screen">
+    <div class="flex flex-col sm:flex-row gap-12 md:gap-24 2xl:gap-40 justify-center lg:justify-start sm:items-center h-screen">
       <div class="highlight-nav flex flex-col">
         <span class="font-normal text-lg text-white/80 mb-4 md:mb-8">Wat we doen</span>
         <?php if(has_nav_menu('highlighted_navigation')): ?>
-          <?php echo wp_nav_menu(['theme_location' => 'highlighted_navigation', 'menu_class' => 'text-white font-semibold flex flex-col gap-2 md:gap-4', 'echo' => false]); ?>
+          <?php echo wp_nav_menu(['theme_location' => 'highlighted_navigation', 'menu_class' => 'font-bold flex flex-col gap-2 md:gap-4', 'echo' => false]); ?>
 
         <?php endif; ?>
       </div>
       <div class="flex flex-col">
         <?php if(has_nav_menu('secondary_navigation')): ?>
-          <?php echo wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'text-white/60 font-semibold flex flex-col gap-2 md:gap-4', 'echo' => false]); ?>
+          <?php echo wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'text-white/60 font-normal flex flex-col gap-2 md:gap-4', 'echo' => false]); ?>
 
         <?php endif; ?>
       </div>
     </div>
-    <div class="absolute right-0 top-0 w-[30%] bg-primary h-full">
+    <div class="hidden lg:block absolute right-0 top-0 w-[30%] bg-primary h-full">
       <div class="absolute inset-0 z-30 bg-gradient-to-r from-black to-transparent"></div> 
         <?php
           $items = wp_get_nav_menu_items('Highlighted');

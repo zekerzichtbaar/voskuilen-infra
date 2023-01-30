@@ -16,9 +16,8 @@ section {
     @apply py-12 md:py-24 lg:py-32;
 }
 .container {
-    padding-left: 60px;
-    padding-right: 60px;
-
+    // padding-left: 60px;
+    // padding-right: 60px;
     @screen 2xl {
         max-width: 1440px;
     }
@@ -54,7 +53,7 @@ section {
 
 #menu-highlighted {
   .menu-item{
-    @apply font-bold text-6xl text-white;
+    @apply font-bold text-5xl md:text-6xl text-white;
   }
 }
 
