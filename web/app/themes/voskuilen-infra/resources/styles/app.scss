@@ -2,6 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import 'grid';
+
 h1 {
     @apply text-5xl sm:text-7xl;
 }
