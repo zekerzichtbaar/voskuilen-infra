@@ -19,7 +19,9 @@ section {
     padding-left: 60px;
     padding-right: 60px;
 
-    @apply 2xl:max-w-7xl;
+    @screen 2xl {
+        max-width: 1440px;
+    }
 }
 #menu-primary-navigation {
     > li {
