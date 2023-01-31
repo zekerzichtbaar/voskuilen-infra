@@ -1141,11 +1141,6 @@
           "name": "Primary",
           "slug": "primary",
           "color": "#d0103a"
-        },
-        {
-          "name": "Offwhite",
-          "slug": "offwhite",
-          "color": "#fcf3f5"
         }
       ]
     },
