@@ -34,6 +34,13 @@ section {
     }
 }
 
+.content {
+  @apply font-normal text-3xl leading-normal;
+  b {
+    @apply text-primary font-semibold;
+  }
+}
+
 #menu-primary-navigation {
   > li {
       @apply relative py-4;

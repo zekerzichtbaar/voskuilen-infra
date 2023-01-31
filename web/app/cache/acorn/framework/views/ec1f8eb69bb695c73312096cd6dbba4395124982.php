@@ -58,7 +58,7 @@
           }
         ?>
       <img class="menu-image absolute inset-0 w-full h-full z-10 object-cover" src="<?= \Roots\asset('images/menu-placeholder.png'); ?>">
-      <div class="absolute flex flex-col justify-center h-full">
+      <div class="absolute left-4 2xl:left-16 flex flex-col justify-center h-full">
         <h3 class="text-white font-bold z-30"><?php echo get_field('title', 'option'); ?></h3>
         <span class="text-white/70 z-30"><?php echo get_field('menu_content', 'option'); ?></span>
         <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
