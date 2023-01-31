@@ -12,9 +12,18 @@ h3 {
     @apply text-xl lg:text-2xl xl:text-3xl font-semibold leading-10;
 }
 
+h4 {
+  @apply text-lg sm:text-2xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
 section {
     @apply py-12 md:py-24 lg:py-32;
 }
+
 .container {
     // padding-left: 60px;
     // padding-right: 60px;
@@ -22,6 +31,7 @@ section {
         max-width: 1340px;
     }
 }
+
 #menu-primary-navigation {
   > li {
       @apply relative py-4;
@@ -62,12 +72,17 @@ section {
 }
 
 .button {
-    @apply relative inline-flex gap-4 justify-center items-center text-white uppercase font-bold text-base px-8 py-4 tracking-wide;
+    @apply relative inline-flex gap-4 justify-center items-center text-white uppercase font-bold text-base tracking-wide;
 
     &::after {
         content: url("../images/arrow-right.svg");
         @apply relative top-1 w-7 text-white h-full;
     }
+}
+
+.button-primary,
+.button-secondary {
+  @apply px-4 md:px-8 py-2 md:py-4;
 }
 
 .button-primary {
@@ -110,19 +125,23 @@ section {
     }
   }
 
-  .grid_template {
-    grid-template-rows: auto auto auto auto auto auto auto auto;
+.grid_template {
+  grid-template-rows: auto auto auto auto auto auto auto auto;
 
-    @screen md {
-        grid-template-rows: 300px auto auto auto 125px 125px;
-    }
-    @screen lg {
-        grid-template-rows: 350px auto auto auto 200px 200px;
-    }
-    @screen xl {
-        grid-template-rows: 400px auto auto auto 200px 200px;
-    }
-    @screen 2xl {
-        grid-template-rows: 400px auto auto auto 200px 200px;
-    }
+  @screen md {
+      grid-template-rows: 300px auto auto auto 125px 125px;
   }
+  @screen lg {
+      grid-template-rows: 350px auto auto auto 200px 200px;
+  }
+  @screen xl {
+      grid-template-rows: 400px auto auto auto 200px 200px;
+  }
+  @screen 2xl {
+      grid-template-rows: 400px auto auto auto 200px 200px;
+  }
+}
+
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, var(--gradient)), transparent);
+}
