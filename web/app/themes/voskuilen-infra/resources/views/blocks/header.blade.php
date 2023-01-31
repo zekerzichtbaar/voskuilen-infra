@@ -1,4 +1,4 @@
-<section class="relative border-[30px] border-offwhite py-0">
+<section class="relative border-[15px] md:border-[30px] border-offwhite py-0">
     @if($type == "header")
         <div class="text-white" style="height: 80vh;">
             @if($background = "bg_image")

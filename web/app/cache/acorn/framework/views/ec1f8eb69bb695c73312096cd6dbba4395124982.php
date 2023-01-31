@@ -1,4 +1,4 @@
-<header class="banner fixed md:top-12 z-30 w-full md:border-x-[30px] border-transparent">
+<header class="banner md:px-0 fixed py-[15px] md:py-12 z-30 w-full border-x-[15px] md:border-x-[30px] border-transparent">
   <div class="container mx-auto text-white">
     <div class="flex justify-between items-center">
       <a class="brand md:-mt-[50px]" href="<?php echo e(home_url('/')); ?>">

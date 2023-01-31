@@ -25,6 +25,7 @@
     "@roots/sage": "6.7.0"
   },
   "dependencies": {
+    "basicscroll": "^3.0.4",
     "jquery": "^3.6.3"
   }
 }

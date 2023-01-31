@@ -1,5 +1,6 @@
 import domReady from '@roots/sage/client/dom-ready';
 import $ from 'jquery';
+import * as basicScroll from 'basicscroll'
 
 /**
  * Application entrypoint
@@ -32,6 +33,20 @@ domReady(async () => {
       $(`.menu-image[data-id=${menuId}]`).addClass('active');
     }
   );
+
+  const instance = basicScroll.create({
+    elem: document.querySelector('.scrolled'),
+    from: '0',
+	  to: '150px',
+    props: {
+      '--gradient': {
+        from: 0,
+        to: 0.8
+      }
+    }
+  })
+  
+  instance.start()
 
 });
 
