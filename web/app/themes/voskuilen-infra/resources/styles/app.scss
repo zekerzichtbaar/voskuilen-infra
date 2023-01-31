@@ -2,8 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@import 'grid';
-
 h1 {
     @apply text-5xl sm:text-7xl;
 }
@@ -11,7 +9,7 @@ h2 {
     @apply text-4xl sm:text-6xl;
 }
 h3 {
-    @apply text-xl sm:text-3xl;
+    @apply text-xl lg:text-2xl xl:text-3xl font-semibold leading-10;
 }
 
 section {
@@ -21,7 +19,7 @@ section {
     // padding-left: 60px;
     // padding-right: 60px;
     @screen 2xl {
-        max-width: 1440px;
+        max-width: 1340px;
     }
 }
 #menu-primary-navigation {
@@ -109,5 +107,22 @@ section {
       &:nth-child(3) {
         @apply transform rotate-45 -translate-y-[0.290rem];
       }
+    }
+  }
+
+  .grid_template {
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+
+    @screen md {
+        grid-template-rows: 300px auto auto auto 125px 125px;
+    }
+    @screen lg {
+        grid-template-rows: 350px auto auto auto 200px 200px;
+    }
+    @screen xl {
+        grid-template-rows: 400px auto auto auto 200px 200px;
+    }
+    @screen 2xl {
+        grid-template-rows: 400px auto auto auto 200px 200px;
     }
   }
