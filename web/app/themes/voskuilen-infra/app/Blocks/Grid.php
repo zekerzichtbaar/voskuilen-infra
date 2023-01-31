@@ -27,8 +27,31 @@ class Grid extends Block
 
     public function with()
     {
+        $grid_items = get_field('grid_items');
+        // $project_count = 0;
+
+        // foreach ($grid_items as $key => $grid_item) {
+        //     if($grid_item['acf_fc_layout'] == 'project' && $grid_item['selected_project'] == null) {
+        //         $project_count++;
+        //     }
+        // }
+        
+        // $project_query_args = ['post_type' => 'project', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => $project_count];
+        // $projects = new \WP_Query($project_query_args);
+
         return [
-          'grid_items'                => get_field('grid_items'),
+            // 'project_count'         => $project_count,
+            // 'projects'              => $projects,
+            'grid_items'            => $grid_items,
+            'position'              => [
+                    'md:col-span-5 md:row-span-1',
+                    'md:col-span-7 md:row-span-1',
+                    'md:col-span-6 md:row-span-2 aspect-square',
+                    'md:col-span-6 md:row-span-2 aspect-square',
+                    'md:col-span-6 md:row-span-3',
+                    'md:col-span-6 md:col-start-7 md:row-span-1',
+                    'md:col-span-6 md:col-start-7 md:row-span-2',
+            ],
         ];
     }
 

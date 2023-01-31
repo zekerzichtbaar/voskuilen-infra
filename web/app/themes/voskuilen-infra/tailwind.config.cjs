@@ -12,12 +12,6 @@ module.exports = {
         padding: {
           DEFAULT: '1.5rem',
         },
-        screens: {
-          sm: '100%',
-          md: '980px',
-          lg: '1100px',
-          xl: '1240px',
-        },
       },
       fontFamily: {
         'sans': 'Sofia Pro',
