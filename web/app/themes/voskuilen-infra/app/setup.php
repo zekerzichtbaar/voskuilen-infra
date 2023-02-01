@@ -58,6 +58,12 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
+        'secondary_navigation' => __('Secondary Navigation', 'sage'),
+        'highlighted_navigation' => __('Highlighted Navigation', 'sage'),
+        'footer1_navigation' => __('Footer 1 Navigation', 'sage'),
+        'footer2_navigation' => __('Footer 2 Navigation', 'sage'),
+        'footer3_navigation' => __('Footer 3 Navigation', 'sage'),
+        'footer_policy_navigation' => __('Footer Policy Navigation', 'sage'),
     ]);
 
     /**

@@ -1,3 +1,154 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+h1 {
+    @apply text-5xl sm:text-7xl;
+}
+h2 {
+    @apply text-4xl sm:text-6xl;
+}
+h3 {
+    @apply text-xl lg:text-2xl xl:text-3xl font-semibold leading-10;
+}
+
+h4 {
+  @apply text-lg sm:text-2xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+section {
+    @apply py-12 md:py-24 lg:py-32;
+}
+
+.container {
+    // padding-left: 60px;
+    // padding-right: 60px;
+    @screen 2xl {
+        max-width: 1340px;
+    }
+}
+
+.content {
+  @apply font-normal text-3xl leading-normal;
+  b {
+    @apply text-primary font-semibold;
+  }
+}
+
+#menu-primary-navigation {
+  > li {
+      @apply relative py-4;
+  }
+
+  .sub-menu {
+    @apply opacity-0 invisible absolute bg-white flex flex-col gap-4 font-normal w-60 shadow-md p-8 text-black transition-all duration-300 ease-in-out;
+  }
+    
+  .menu-item-has-children {
+    @apply pr-8;
+
+    &::after {
+      content: url("../images/icon-arrow.svg");
+      @apply absolute top-1/2 -translate-y-1/2 right-0 h-6 w-6 transition duration-300 ease-in-out;
+    }
+
+    &:hover {
+      .sub-menu {
+          @apply opacity-100 visible translate-y-4 z-30;
+      }
+
+      &::after {
+          @apply -rotate-180;
+      }
+    }
+  }
+}
+
+#menu-highlighted {
+  .menu-item{
+    @apply font-bold text-5xl md:text-6xl text-white;
+  }
+}
+
+.active {
+  @apply opacity-100;
+}
+
+.button {
+    @apply relative inline-flex gap-4 justify-center items-center text-white uppercase font-bold text-base tracking-wide;
+
+    &::after {
+        content: url("../images/arrow-right.svg");
+        @apply relative top-1 w-7 text-white h-full;
+    }
+}
+
+.button-primary,
+.button-secondary {
+  @apply px-4 md:px-8 py-2 md:py-4;
+}
+
+.button-primary {
+    @apply bg-primary;
+}
+
+.button-secondary {
+    @apply bg-black;
+}
+
+.icon-left {
+    &--line {
+      &:nth-child(1) {
+        @apply transform rotate-45 translate-y-[0.290rem];
+      }
+  
+      &:nth-child(2) {
+        @apply opacity-0;
+      }
+  
+      &:nth-child(3) {
+        @apply transform -rotate-45 -translate-y-[0.290rem];
+      }
+    }
+  }
+
+.icon-right {
+    &--line {
+      &:nth-child(1) {
+        @apply transform -rotate-45 translate-y-[0.290rem];
+      }
+  
+      &:nth-child(2) {
+        @apply opacity-0;
+      }
+  
+      &:nth-child(3) {
+        @apply transform rotate-45 -translate-y-[0.290rem];
+      }
+    }
+  }
+
+.grid_template {
+  grid-template-rows: auto auto auto auto auto auto auto auto;
+
+  @screen md {
+      grid-template-rows: 300px auto auto auto 125px 125px;
+  }
+  @screen lg {
+      grid-template-rows: 350px auto auto auto 200px 200px;
+  }
+  @screen xl {
+      grid-template-rows: 400px auto auto auto 200px 200px;
+  }
+  @screen 2xl {
+      grid-template-rows: 400px auto auto auto 200px 200px;
+  }
+}
+
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, var(--gradient)), transparent);
+}
