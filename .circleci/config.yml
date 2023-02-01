@@ -1,0 +1,77 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # Specify the version you desire here
+      - image: cimg/php:7.4-browsers
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # Using the RAM variation mitigates I/O contention
+      # for database intensive operations.
+      # - image: circleci/mysql:5.7-ram
+      #
+      # - image: redis:2.8.19
+    steps:
+      - checkout
+
+      - run: sudo apt update
+      - run: sudo docker-php-ext-install zip
+
+      - run: mkdir ~/$CIRCLE_PROJECT_REPONAME
+      - run: cd ~/$CIRCLE_PROJECT_REPONAME && git clone git@github.com:zekerzichtbaar/Bedrock-CI-Boilerplate.git .
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            # "composer.lock" can be used if it is committed to the repo
+            - v1-dependencies-{{ checksum "composer.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: composer config http-basic.plugins.zekerzichtbaar.nl aHjHz96lOSDtIFK28H26LmmJ3RB0af5j satispress
+      - run: composer install --no-dev
+      - run: cd web/app/themes/$CIRCLE_PROJECT_REPONAME/ && composer install && yarn && yarn build && yarn --production
+      - run: cp -R ~/project/* ~/$CIRCLE_PROJECT_REPONAME/code/
+      - run: sudo apt install rsync
+      - add_ssh_keys:
+          fingerprints:
+            - e8:3d:48:46:be:60:37:e3:7b:50:87:30:6d:68:ae:9c
+      - run:
+          name: Add known host
+          command: |
+            ssh-keyscan -H staging.zekerzichtbaar.nl >> ~/.ssh/known_hosts
+      - run:
+          name: Deploy Over SSH
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "prod-deploy" ];
+            then
+              rsync -avzh ~/$CIRCLE_PROJECT_REPONAME/ root@staging.zekerzichtbaar.nl:~/sites/$CIRCLE_PROJECT_REPONAME
+            else
+              rsync -avzh ~/$CIRCLE_PROJECT_REPONAME/ root@staging.zekerzichtbaar.nl:~/sites/$CIRCLE_PROJECT_REPONAME
+            fi
+      - run:
+          name: Copy env
+          command: |
+            ssh root@staging.zekerzichtbaar.nl 'cp ~/sites/'${CIRCLE_PROJECT_REPONAME}'/code/deploy/staging.env ~/sites/'${CIRCLE_PROJECT_REPONAME}'/code/.env'
+      - run:
+          name: Chown files
+          command: |
+            ssh root@staging.zekerzichtbaar.nl 'chown -R www-data:www-data ~/sites/'${CIRCLE_PROJECT_REPONAME}'/'
+      - run:
+          name: Docker compose
+          command: |
+            ssh root@staging.zekerzichtbaar.nl 'cd ~/sites/'${CIRCLE_PROJECT_REPONAME}'/ && docker-compose down && DOMAIN_NAME='${CIRCLE_PROJECT_REPONAME}' docker-compose up -d'
+workflows:
+  version: 2
+  build-test-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: /.*-deploy/
