@@ -41,7 +41,7 @@ domReady(async () => {
     props: {
       '--gradient': {
         from: 0,
-        to: 0.8
+        to: 0.65
       }
     }
   })
