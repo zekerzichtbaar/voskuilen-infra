@@ -26,7 +26,7 @@
                         </div>
                     @endif
                     @if($two_column_image_two)
-                        <div class="relative aspect-video bg-primary h-[80vh] w-full md:w-[40rem] lg:w-[30rem]">
+                        <div class="relative aspect-video bg-primary h-[50rem] w-full md:w-[40rem] lg:w-[30rem]">
                             {!! wp_get_attachment_image( $two_column_image_two['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover object-center"] ) !!}
                         </div>
                     @endif

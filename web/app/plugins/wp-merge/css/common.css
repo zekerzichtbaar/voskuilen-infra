@@ -1,0 +1,431 @@
+/**
+ *WPMerge
+ *Copyright (c) 2018 Revmakx LLC
+ *revmakx.com
+ */
+
+/*.wpmerge_b .main-cols-cont {}*/
+
+.wpmerge_b .main-cols {
+	width: 450px;
+	float: left;
+	margin-right: 20px;
+}
+
+.wpmerge_b .info-box {
+	color: #31708f;
+	background-color: #d9edf7;
+	border: 1px solid #bce8f1;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+.wpmerge_b .error-box {
+	background-color: #f2dede;
+	border: 1px solid #ebcccc;
+	color: #a94442;
+	padding: 4px 7px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	text-align: left;
+}
+.wpmerge_b .success-box {
+	background-color: #dff0d8;
+	border: 1px solid #d0e9c6;
+	color: #3c763d;
+	padding: 4px 7px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	text-align: left;
+}
+
+.wpmerge_b .m-box {
+
+	border: 1px solid #e5e5e5;
+	background: #fff;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+	margin-bottom: 20px;
+	line-height: 1.4em;
+}
+
+.wpmerge_b hr {
+	height: 1px;
+	background-color: #e5e5e5;
+	border: 0;
+}
+
+.wpmerge_b .m-box .hd {
+	font-size: 14px;
+	padding: 8px 12px;
+	border-bottom: 1px solid #eee;
+	font-weight: 600;
+	color: #23282d;
+	margin: 0;
+}
+
+.wpmerge_b .m-box .pad {
+	padding: 12px;
+	box-sizing: border-box;
+}
+
+.wpmerge_b .m-box .g-bg {
+	background-color: #fafafa;
+	border-bottom: 1px solid #eee;
+	color: #72777c;
+}
+
+.wpmerge_b .cf::after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.wpmerge_b .m-box .cf::after {
+	display: block;
+	content: "";
+	clear: both;
+}
+.wpmerge_b .record-status {
+	margin: 9px 0;
+}
+
+.wpmerge_b .record-status.on {
+	color: #27ae60;
+}
+
+.wpmerge_b .record-status.off {
+	color: #c0392b;
+}
+
+.wpmerge_b .m-box .col:first-child, .wpmerge_b .m-box .cf .col:first-child {
+	float: left;
+}
+
+.wpmerge_b .m-box .col:last-child, .wpmerge_b .m-box .cf .col:last-child {
+	float: right;
+}
+
+.wpmerge_b .m-box .col50 {
+	width: 49%;
+}
+
+.wpmerge_b .m-box .col70 {
+	width: 70%;
+}
+
+.wpmerge_b .m-box .col30 {
+	width: 30%;
+}
+
+.wpmerge_b .m-box .ft {
+	border-top: 1px solid #eee;
+	text-align: right;
+}
+
+.wpmerge_b .m-box .ft .warn {
+	float: left;
+	color: #f39c12;
+	font-size: 12px;
+	padding: 5px 0px;
+}
+
+.wpmerge_b .m-box .ft .info {
+	float: left;
+	color: #31708f;
+	font-size: 12px;
+	padding: 5px 0px;
+}
+.wpmerge_b .m-box .ft .warn .dashicons, .wpmerge_b .m-box .ft .info .dashicons  { font-size: 14px; }
+
+.wpmerge_b .connect.dev input[type=text] {
+	width: 331px;
+}
+
+.wpmerge_b .connect input[type=text]+input[type=submit] {
+	float: left;
+	margin-right: 5px;
+}
+
+.wpmerge_b .connect.dev input[type=text]+input[type=submit] {
+	float: left;
+	margin-right: 0;
+}
+.wpmerge_b .process-steps-progress p {
+	position: relative;
+	padding-left: 25px;
+}
+
+.wpmerge_b .process-steps-progress p::before {
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+@keyframes spinner {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.wpmerge_b .processing:after {
+	content: '';
+	box-sizing: border-box;
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border: 2px solid #ccc;
+	border-top-color: #777;
+	animation: spinner .6s linear infinite;
+}
+
+.wpmerge_b .process-steps-progress p.waiting::before {
+	content: '';
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	position: absolute;
+	border: 2px solid #ccc;
+	top: 2px;
+	left: 0;
+}
+
+.wpmerge_b .process-steps-progress p.done::before {
+	content: '';
+	display: block;
+	width: 5px;
+	height: 10px;
+	border: solid #27ae60;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	position: absolute;
+	left: 5px;
+	top: 0px;
+}
+.wpmerge_b .process-steps-progress p.error::before {
+	content: '!';
+	width: 8px;
+	height: 8px;
+	position: absolute;
+	top: 2px;
+	left: 0;
+	color: #c0392b;
+	border: 2px solid #c0392b;
+	border-radius: 50%;
+	font-size: 8px;
+	line-height: 1;
+	text-align: center;
+}
+.wpmerge_b .process-steps-progress p.result {
+	font-size: 16px;
+	padding-top: 15px;
+}
+.wpmerge_b .process-steps-progress p.result.success {
+	color:#27ae60;
+}
+.wpmerge_b .process-steps-progress p.result.oops {
+	color:#c0392b;
+}
+
+/* .wpmerge_b a.button {
+	display: inline-block;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 26px;
+	height: 28px;
+	margin: 0;
+	padding: 0 10px 1px;
+	cursor: pointer;
+	border-width: 1px;
+	border-style: solid;
+	-webkit-appearance: none;
+	border-radius: 3px;
+	white-space: nowrap;
+	box-sizing: border-box;
+	color: #555;
+	border-color: #ccc;
+	background: #f7f7f7;
+	box-shadow: 0 1px 0 #ccc;
+	vertical-align: top;
+}
+
+.wpmerge_b .button-primary {
+	background-color: #0085ba;
+	border-color: #0073aa #006799 #006799;
+	box-shadow: 0 1px 0 #006799;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 26px;
+	height: 28px;
+	margin: 0;
+	padding: 0 10px 1px;
+	cursor: pointer;
+	border-width: 1px;
+	border-style: solid;
+	-webkit-appearance: none;
+	border-radius: 3px;
+	white-space: nowrap;
+	box-sizing: border-box;
+} */
+@-webkit-keyframes loading {
+	from {
+		background-position: 0 0
+	}
+	to {
+		background-position: 1rem 0
+	}
+}
+
+@keyframes loading {
+	from {
+		background-position: 0 0
+	}
+	to {
+		background-position: 1rem 0
+	}
+}
+
+.wpmerge_b .button-primary.loading {
+	background-image: linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	background-size: 1rem 1rem;
+	-webkit-animation: loading 0.7s linear infinite;
+	animation: loading 0.7s linear infinite;
+	color: #66c6e4; /*color: rgba(255, 255, 255, .4);*/
+	cursor: default;
+}
+.wpmerge_b a.button.loading {
+	background-image: linear-gradient(-45deg, rgba(0, 0, 0, .05) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, .05) 50%, rgba(0, 0, 0, .05) 75%, transparent 75%, transparent);
+	background-size: 1rem 1rem;
+	-webkit-animation: loading 0.7s linear infinite;
+	animation: loading 0.7s linear infinite;
+	color: rgba(0, 0, 0, .4);
+	cursor: default;
+}
+
+
+.wpmerge_b input[type=checkbox].slide_cb {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.wpmerge_b label.slide_cb_label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 35px;
+	height: 18px;
+	background: #c0392b;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+	float: left;
+	transition: 0.2s;
+}
+
+.wpmerge_b label.slide_cb_label:after {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 14px;
+	height: 14px;
+	background: #fff;
+	border-radius: 10px;
+	transition: 0.2s;
+}
+
+.wpmerge_b input.slide_cb:checked+label.slide_cb_label {
+	background: #27ae60;
+}
+
+.wpmerge_b input.slide_cb:checked+label.slide_cb_label:after {
+	left: calc(100% - 2px);
+	transform: translateX(-100%);
+}
+
+.wpmerge_b input.slide_cb:checked+label.slide_cb_label:hover:after {
+	left: calc(100% - 3px);
+}
+
+.wpmerge_b input.slide_cb+label.slide_cb_label:hover:after {
+	left: 3px;
+}
+
+.wpmerge_b label.slide_cb_label:active:after {
+	width: 20px;
+}
+
+.wpmerge_b .m-box input[type=text], .wpmerge_b .m-box input[type=number], .wpmerge_b .m-box input[type=password] {
+	float: left;
+	border: 1px solid #ddd;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07);
+	background-color: #fff;
+	padding: 6px 6px 7px;
+	font-size: 12px;
+	font-family: monospace;
+	width: 100%;
+	margin-right: 5px;
+}
+
+.wpmerge_b .fancytree-title { 
+	font-size: 13px;
+	color: #999 !important;
+}
+
+.wpmerge_b .loader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    border-top-color: #777;
+	animation: spinner .6s linear infinite;
+	display: inline-block;
+}
+
+.wpmerge_b .main-cols.notes {
+	float: right;
+	font-size: 12px;
+	font-family:monospace;
+	position: relative;
+}
+
+.wpmerge_b .main-cols.notes .m-box {
+	background-color: #fff6c2;
+}
+
+.wpmerge_b .main-cols.notes .m-box ul {
+	padding-left: 20px;
+}
+
+.wpmerge_b .main-cols.notes .m-box ul li {
+	padding-bottom: 5px;
+	list-style: disc;
+}
+
+.wpmerge_b .main-cols.notes .m-box h4 {
+	margin: 15px 0 5px 0;
+}
+
+.wpmerge_b .main-cols.notes span {
+	position: absolute;
+	right: 8px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 3px 5px;
+	border-radius: 3px;
+	top: 9px;
+	cursor: pointer;
+}
+
+.wpmerge_b .main-cols.notes.collapsed {
+	right: 0;
+	width: auto;
+	cursor: pointer;
+}
