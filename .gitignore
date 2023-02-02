@@ -1,3 +1,6 @@
 web/app/cache/*
 .env
 web/app/plugins/*
+.DS_Store
+vendor/*
+web/app/debug.log
