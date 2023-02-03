@@ -2,18 +2,20 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import 'swiper/css';
+@import './swiper.scss';
+
 h1 {
-    @apply text-5xl sm:text-7xl;
+    @apply text-5xl sm:text-7xl font-semibold leading-10;
 }
 h2 {
-    @apply text-4xl sm:text-6xl;
+    @apply text-4xl sm:text-6xl font-semibold leading-10;
 }
 h3 {
     @apply text-xl lg:text-2xl xl:text-3xl font-semibold leading-10;
 }
-
 h4 {
-  @apply text-lg sm:text-2xl;
+  @apply text-lg sm:text-xl;
 }
 
 h5 {

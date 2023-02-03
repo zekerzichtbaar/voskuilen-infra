@@ -1,0 +1,10 @@
+.swiper-pagination-bullet {
+    @apply inline-block w-16 h-0.5 bg-gray-200 cursor-pointer;
+
+    &.swiper-pagination-bullet-active {
+        @apply bg-primary;
+    }
+}
+.swiper-pagination {
+    @apply flex gap-2
+}

@@ -1,6 +1,8 @@
 import domReady from '@roots/sage/client/dom-ready';
 import $ from 'jquery';
-import * as basicScroll from 'basicscroll'
+import * as basicScroll from 'basicscroll';
+import Swiper from 'swiper';
+import { Pagination } from 'swiper';
 
 /**
  * Application entrypoint
@@ -47,6 +49,32 @@ domReady(async () => {
   })
   
   instance.start()
+
+  Swiper.use([Pagination]);
+
+  const swiper = new Swiper('.swiper',  {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    grabCursor: true,
+    preloadImages: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      }
+    },
+  });
 
 });
 
