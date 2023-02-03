@@ -39,6 +39,7 @@ class TextImage extends Block
           'title'                   => get_field('title'),
           'content'                 => get_field('content'),
           'buttons'                 => get_field('buttons'),
+          'links'                   => get_field('links'),
         ];
     }
 
