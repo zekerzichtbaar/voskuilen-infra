@@ -1,4 +1,4 @@
-<section class="container py-32">
+<section class="container pt-32">
     <div class="grid grid-cols-12 gap-5 grid_template">
         @php $project_count = 0; @endphp
         @php $article_count = 0; @endphp
