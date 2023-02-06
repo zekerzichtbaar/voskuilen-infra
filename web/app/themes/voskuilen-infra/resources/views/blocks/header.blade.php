@@ -1,6 +1,6 @@
-<section class="relative border-[15px] md:border-[30px] border-offwhite py-0">
+<section class="relative py-0">
     @if($type == "header")
-        <div class="text-white" style="height: 80vh;">
+        <div class="relative text-white border-[15px] md:border-[30px] border-transparent" style="height: 80vh;">
             @if($background = "bg_image")
                 @if($bg_image){!! wp_get_attachment_image( $bg_image['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover"] ) !!}@endif
                 <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70"></div>
@@ -20,12 +20,20 @@
             </div>
         </div>
     @elseif($type == "subheader")
-        <div class="text-white" style="height: 50vh;">
+        <div class="relative text-white border-[15px] md:border-[30px] border-b-0 border-transparent" style="height: 50vh;">
             @if($bg_image){!! wp_get_attachment_image( $bg_image['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover"] ) !!}@endif
             <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70"></div>
             <div class="container mx-auto h-full flex items-center">
                 <h1 class="relative">{!! $title !!}</h1>
             </div>
+        </div>
+        <div class="container -mt-[30px]">
+            <?php
+                if ( function_exists('yoast_breadcrumb') ) {
+                    yoast_breadcrumb( '<div class="pb-4 pt-5" id="breadcrumbs">','</div>' );
+                }
+            ?>
+            <hr>
         </div>
     @endif
 </section>

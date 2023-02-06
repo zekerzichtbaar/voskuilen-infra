@@ -26,6 +26,10 @@ section {
     @apply py-12 md:py-24 lg:py-32;
 }
 
+#breadcrumbs span {
+  @apply flex items-center;
+}
+
 .container {
     // padding-left: 60px;
     // padding-right: 60px;
@@ -81,17 +85,7 @@ section {
 }
 
 .button {
-    @apply relative inline-flex gap-4 justify-center items-center text-white uppercase font-bold text-base tracking-wide;
-
-    &::after {
-        content: url("../images/arrow-right.svg");
-        @apply relative top-1 w-7 text-white h-full;
-    }
-}
-
-.button-primary,
-.button-secondary {
-  @apply px-4 md:px-8 py-2 md:py-4;
+  @apply relative inline-flex gap-4 justify-center items-center text-white uppercase font-bold text-base tracking-wide px-4 md:px-8 py-2 md:py-5;
 }
 
 .button-primary {
