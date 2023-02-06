@@ -1,5 +1,5 @@
 <article @php(post_class('relative w-full h-full overflow-hidden'))>
-  <a href="{{ get_permalink() }}" class="flex flex-col absolute inset-0 w-full h-full">
+  <a href="{{ get_permalink() }}" class="flex flex-col absolute inset-0 w-full h-full group">
     <div class="relative flex p-10 w-full h-full">
       {!! wp_get_attachment_image(get_post_thumbnail_id(), 'large', false, ['class' => 'absolute inset-0 w-full h-full object-center object-cover duration-300 group-hover:scale-[1.1]']) !!}
       <div class="relative w-full flex items-start">
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="relative bg-white text-black p-10 h-full flex flex-col max-h-[40%]">
-      <{{ (empty($news_heading) ? 'h2' : $news_heading) }} class="mb-6">{!! $title !!}</{{ (empty($news_heading) ? 'h2' : $news_heading) }}>
+      <{{ (empty($news_heading) ? 'h3' : $news_heading) }} class="mb-6">{!! $title !!}</{{ (empty($news_heading) ? 'h3' : $news_heading) }}>
       <div class="flex justify-between items-center mt-auto">
         <div class="flex items-center">
           <svg class="h-6 w-auto mr-2 mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">

@@ -20,7 +20,7 @@
         <div class="inline-block px-2 pt-1 border-[2px] border-primary text-sm bg-primary text-white uppercase font-bold">{{ __('Projecten', 'voskuilen-infra') }}</div>
       </div>
     </div>
-    <{{ (empty($project_heading) ? 'h2' : $project_heading) }} class="mt-auto mb-6">{!! $title !!}</{{ (empty($project_heading) ? 'h2' : $project_heading) }}>
+    <{{ (empty($project_heading) ? 'h3' : $project_heading) }} class="mt-auto mb-6">{!! $title !!}</{{ (empty($project_heading) ? 'h3' : $project_heading) }}>
     <div class="flex justify-between items-center">
       <span>Bekijk dit project</span>
       <svg class="group-hover:translate-x-3 h-6 duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="w-6 h-6">
