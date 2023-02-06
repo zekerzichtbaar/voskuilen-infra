@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "basicscroll": "^3.0.4",
+    "countup.js": "^2.4.2",
     "jquery": "^3.6.3",
     "swiper": "^9.0.1"
   }

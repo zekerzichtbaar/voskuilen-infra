@@ -148,3 +148,7 @@ section {
 .banner {
   background-image: linear-gradient(rgba(0, 0, 0, var(--gradient)), transparent);
 }
+
+.fadeIn {
+  @apply visible;
+}

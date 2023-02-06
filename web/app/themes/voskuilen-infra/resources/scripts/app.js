@@ -3,6 +3,7 @@ import $ from 'jquery';
 import * as basicScroll from 'basicscroll';
 import Swiper from 'swiper';
 import { Pagination } from 'swiper';
+import { CountUp } from 'countup.js';
 
 /**
  * Application entrypoint
@@ -75,6 +76,22 @@ domReady(async () => {
       }
     },
   });
+
+  $( ".counter" ).each(function() {
+    let id = $(this).attr('id');
+    let val = $(this).text();
+
+    new CountUp(id, val, {
+      enableScrollSpy: true,
+      scrollSpyDelay: 100,
+      useGrouping: false,
+      useEasing: true,
+      scrollSpyOnce: true,
+    });
+    
+  });
+  
+
 
 });
 
