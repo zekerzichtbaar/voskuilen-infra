@@ -140,3 +140,26 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+/**
+ * Edit query vars according to $_GET filters
+ */
+add_action( 'pre_get_posts', function( $query ) {
+    if ( !is_admin() && $query->is_main_query() && is_archive() == 'project') {
+        $args = $_GET;
+
+        // Set search
+        if(!empty($args['search'])) {
+            $query->set( 's', $args['search'] );
+        }
+
+        // Set category
+        if(!empty($args['cat'])) {
+            $query->set( 'tax_query', [[
+                'taxonomy' => 'project_category',
+                'field' => 'slug',
+                'terms' => array_values($args['cat'])
+            ]] );
+        }
+    }
+    return $query;
+});
