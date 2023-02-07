@@ -28,11 +28,9 @@
             </div>
         </div>
         <div class="container -mt-[30px]">
-            <?php
-                if ( function_exists('yoast_breadcrumb') ) {
-                    yoast_breadcrumb( '<div class="pb-4 pt-5" id="breadcrumbs">','</div>' );
-                }
-            ?>
+            @if(function_exists('yoast_breadcrumb'))
+                @php(yoast_breadcrumb( '<div class="pb-4 pt-5" id="breadcrumbs">','</div>' ))
+            @endif
             <hr>
         </div>
     @endif
