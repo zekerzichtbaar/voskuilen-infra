@@ -152,3 +152,12 @@ section {
 .fadeIn {
   @apply visible;
 }
+
+#projectFilters {
+  transition: max-height .5s ease-in-out;
+  max-height: 300px;
+
+  &.collapsed {
+    max-height: 0px;
+  }
+}

@@ -124,6 +124,10 @@ domReady(async () => {
     }
   });
 
+  $('#projectFiltersToggle').on('click', function() {
+    $('#projectFilters').toggleClass('collapsed');
+  });
+
 });
 
 /**
