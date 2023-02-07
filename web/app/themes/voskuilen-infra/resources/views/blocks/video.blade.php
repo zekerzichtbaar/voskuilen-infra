@@ -2,7 +2,7 @@
     <div class="container">
         <div class="flex justify-center items-center">
             <div class="relative w-full h-full aspect-video">
-                <div class="z-30 absolute inset-0 flex items-center justify-center">
+                <div class="z-10 absolute inset-0 flex items-center justify-center">
                     <div id="playBtn" class="border-4 border-white p-2 md:p-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6 text-white">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
@@ -11,7 +11,7 @@
                 </div>
                 <video id="video" class="w-full h-full" src="{!! $video_url !!}"></video>
                 {!! wp_get_attachment_image( $placeholder['ID'], isset($size), "", ["class" => "placeholder w-full h-full absolute inset-0 object-cover"] ) !!}
-                <div class="z-20 absolute inset-0 bg-black/20"></div>
+                <div class="absolute inset-0 bg-black/20"></div>
                 <div class="hidden controls">
                     <div id="togglePlayBtn" class="bg-primary p-3 md:p-4 absolute -bottom-12 md:-bottom-14 right-0">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="pauseBtn w-6 h-6 text-white">
