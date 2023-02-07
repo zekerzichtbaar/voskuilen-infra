@@ -9,9 +9,8 @@
   <div class="container -mt-[30px]">
     <?php
         if ( function_exists('yoast_breadcrumb') ) {
-            yoast_breadcrumb( '<div class="pb-4 pt-5" id="breadcrumbs">','</div>' );
+            yoast_breadcrumb( '<div class="pb-4 pt-5 border-b border-gray-200" id="breadcrumbs">','</div>' );
         }
     ?>
-    <hr>
   </div>
 @endif
