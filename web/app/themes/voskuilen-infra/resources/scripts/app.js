@@ -77,7 +77,7 @@ domReady(async () => {
     },
   });
 
-  $( ".counter" ).each(function() {
+  $('.counter').each(function() {
     let id = $(this).attr('id');
     let val = $(this).text();
 
@@ -88,10 +88,41 @@ domReady(async () => {
       useEasing: true,
       scrollSpyOnce: true,
     });
-    
   });
   
+  $('#playBtn').on('click', function() {
+    $('#video').trigger('play');
+    $('#playBtn, .placeholder').fadeOut();
+    $('.controls').fadeIn();
+  });
 
+  $('#togglePlayBtn').on('click', function() {
+    var video = $("#video").get(0);
+
+    if (video.paused) {
+        $('#video').trigger('play');
+        $('.pauseBtn').show();
+        $('.playBtn').hide();
+    } else {
+      $('#video').trigger('pause');
+      $('.pauseBtn').hide();
+      $('.playBtn').show();
+    }
+  });
+
+  $("#video").prop('muted', false);
+
+  $('#toggleAudioBtn').on('click', function() {
+    if($("#video").prop('muted')) {
+      $("#video").prop('muted', false);
+      $('.soundBtn').show();
+      $('.muteBtn').hide();
+    } else {
+      $("#video").prop('muted', true);
+      $('.soundBtn').hide();
+      $('.muteBtn').show();
+    }
+  });
 
 });
 

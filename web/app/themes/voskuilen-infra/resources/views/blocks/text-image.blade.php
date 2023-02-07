@@ -1,6 +1,6 @@
 <section class="relative {{ $pt }} {{ $pb }}">
     <div class="container">
-        <div class="flex gap-12 md:gap-24 {{ $links ? "flex-col md:flex-row" : "flex-col" }}">
+        <div class="flex gap-12 md:gap-24 {{ $links ? "flex-col lg:flex-row" : "flex-col" }}">
             <div class="flex flex-col justify-center items-center {{ $layout == "text-image" ? "order-1" : "order-2" }}">
                 <div class="{{ $image_layout == "two-column" ? "max-w-2xl" : ($links ? 'max-w-4xl' : 'max-w-3xl')}}">
                     @if($title && in_array('title', $content_items))
@@ -40,7 +40,7 @@
                         </div>
                     @endif
                     @if($two_column_image_two)
-                        <div class="relative aspect-video bg-primary h-[30rem] w-full md:w-[40rem] lg:w-[30rem]">
+                        <div class="relative aspect-square md:aspect-video bg-primary h-full md:h-[50rem] w-full md:w-[40rem] lg:w-[30rem]">
                             {!! wp_get_attachment_image( $two_column_image_two['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover object-center"] ) !!}
                         </div>
                     @endif
@@ -48,7 +48,7 @@
             @else
                 <div class="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-4 {{ $layout == "text-image" ? "order-2" : "order-1" }} {{ $links ? "w-full" : "" }}">
                     @if($one_column_image)
-                        <div class="relative aspect-video bg-primary {{ $links ? "h-[30rem] w-full md:w-[40rem] lg:w-[30rem]" : "h-full w-full" }}">
+                        <div class="relative bg-primary {{ $links ? "h-full md:h-[50rem] w-full md:w-[40rem] lg:w-[30rem] aspect-square md:aspect-video" : "h-full w-full aspect-video" }}">
                             {!! wp_get_attachment_image( $one_column_image['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover object-center"] ) !!}
                         </div>
                     @endif
