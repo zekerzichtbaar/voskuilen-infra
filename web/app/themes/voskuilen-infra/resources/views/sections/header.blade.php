@@ -11,7 +11,7 @@
         </nav>
       @endif
 
-      <div id="menuBtn" class="hamburger flex justify-center items-center gap-4 border border-white px-6 py-3 md:px-8 md:py-6 cursor-pointer transition duration-300 ease-in-out">
+      <div id="menuBtn" class="hamburger flex justify-center items-center gap-4 border-2 border-white px-6 py-3 md:px-8 md:py-6 cursor-pointer transition duration-300 ease-in-out">
         <span id="menuBtnText" class="font-black uppercase pt-1">menu</span>
         <div id="hamburger" class="flex">
           <div class="icon-left">
