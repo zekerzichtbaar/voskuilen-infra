@@ -4,8 +4,6 @@
             <{{ $heading }}>{{ $title }}</{{ $heading }}>
         </div>
         <div class="flex flex-col">
-            {{-- <pre> --}}
-            {{-- @php(print_r($werknemers)) --}}
             @foreach($werknemers as $werknemer)
                 <div class="flex items-center py-6 border-b border-gray-200 last:border-none gap-6">
                     {!! get_the_post_thumbnail($werknemer->ID, 'thumbnail', ['class' => 'h-24 w-24 rounded-full']) !!}
