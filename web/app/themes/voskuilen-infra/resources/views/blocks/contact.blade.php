@@ -17,7 +17,7 @@
                 </div>
             @endif
             @if($office_content && in_array('office_content', $content_items))
-                <div class="grid md:grid-cols-2 md:gap-x-8 gap-y-10 md:gap-y-20 my-12 md:my-24">
+                <div class="grid md:grid-cols-2 md:gap-x-8 gap-y-10 md:gap-y-20 {{ count($content_items) !== 1 && $content_items[0] !== 'office_content' ? "my-12 md:my-24" : "" }}">
                     @foreach($office_content as $item)
                         <div class="flex flex-col col-span-1 gap-6 md:gap-12">
                             <div>
@@ -29,6 +29,11 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
+            @endif
+            @if($image && in_array('image', $content_items))
+                <div class="relative aspect-video my-4 md:my-10 bg-primary h-full w-full">
+                    {!! wp_get_attachment_image( $image['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover object-center"] ) !!}
                 </div>
             @endif
         </div>

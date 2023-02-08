@@ -35,6 +35,7 @@ class Contact extends Block
           'form'                => get_field('form'),
           'buttons'             => get_field('buttons'),
           'office_content'      => get_field('office_content'),
+          'image'               => get_field('image'),
         ];
     }
 
