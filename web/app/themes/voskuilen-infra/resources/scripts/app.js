@@ -128,6 +128,19 @@ domReady(async () => {
     $('#projectFilters').toggleClass('collapsed');
   });
 
+  $('.faq').on('click', function() {
+    // Reset all values
+    $(this).siblings().find('.question').siblings('.answer').slideUp(200);
+    $(this).siblings().find('.question').removeClass('text-black/30');
+    $(this).siblings().find('.faq-arrow').removeClass('rotate-180');
+    $(this).siblings().find('.faq-iteration').removeClass('!text-primary font-bold');
+    // Set all values
+    $(this).find('.question').siblings('.answer').slideToggle(200);
+    $(this).find('.question').toggleClass('text-black/30');
+    $(this).find('.faq-arrow').toggleClass('rotate-180');
+    $(this).find('.faq-iteration').toggleClass('!text-primary font-bold');
+  });
+
 });
 
 /**
