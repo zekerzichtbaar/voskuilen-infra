@@ -58,7 +58,7 @@
       <div class="absolute left-4 2xl:left-16 flex flex-col justify-center h-full">
         <h3 class="text-white font-bold z-30">{!! get_field('title', 'option') !!}</h3>
         <span class="text-white/70 z-30">{!! get_field('menu_content', 'option') !!}</span>
-        <x-button class="z-30 mt-6 md:mt-10" type="primary" href="{{ home_url('/contact') }}">Neem contact op</x-button>
+        <x-button class="z-30 mt-6 md:mt-10" type="primary" href="{{ home_url('/stel-een-vraag') }}">Neem contact op</x-button>
       </div>
     </div>
   </div>
