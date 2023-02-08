@@ -33,6 +33,8 @@ class Contact extends Block
           'content_items'       => get_field('content_items'),
           'title'               => get_field('title'),
           'form'                => get_field('form'),
+          'buttons'             => get_field('buttons'),
+          'office_content'      => get_field('office_content'),
         ];
     }
 

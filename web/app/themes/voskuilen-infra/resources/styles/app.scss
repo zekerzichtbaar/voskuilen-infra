@@ -97,6 +97,10 @@ section {
     @apply bg-black;
 }
 
+.button-ghost {
+    @apply px-0 py-0;
+}
+
 .icon-left {
     &--line {
       &:nth-child(1) {
@@ -148,10 +152,6 @@ section {
 
 .banner {
   background-image: linear-gradient(rgba(0, 0, 0, var(--gradient)), transparent);
-}
-
-.fadeIn {
-  @apply visible;
 }
 
 #projectFilters {
