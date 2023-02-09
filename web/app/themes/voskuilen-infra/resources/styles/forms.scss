@@ -11,30 +11,36 @@ textarea {
     @apply hidden;
 }
 
-[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-    position: absolute!important;
-    left: -9999px;
+.gform_body {
+    [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: absolute!important;
+        left: -9999px;
+    }
+
+    [type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
+        position: relative!important;
+        padding-left: 2.0em!important;
+        cursor: pointer!important;
+    }
+
+    [type="checkbox"]:not(:checked) + label:before, [type="checkbox"]:checked + label:before {
+        @apply border border-gray-200 bg-white absolute left-0 w-[1.30rem] h-[1.30rem] p-[2px];
+        content: '';
+    }
+
+    [type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after {
+        @apply bg-primary absolute w-[11px] h-[11px] left-[5px] top-[1px] transition ease-in-out;
+        content: '';
+    }
+
+    [type="checkbox"]:not(:checked) + label:after {
+        @apply opacity-0 scale-0;
+    }
+}
+[type="checkbox"]:checked + .checkbox-facade div {
+    @apply opacity-100 scale-100;
 }
 
-[type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
-    position: relative!important;
-    padding-left: 2.0em!important;
-    cursor: pointer!important;
-}
-
-[type="checkbox"]:not(:checked) + label:before, [type="checkbox"]:checked + label:before {
-    @apply border border-gray-200 bg-white absolute left-0 w-[1.30rem] h-[1.30rem] p-[2px];
-    content: '';
-}
-
-[type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after {
-    @apply bg-primary absolute w-[11px] h-[11px] left-[5px] top-[1px] transition ease-in-out;
-    content: '';
-}
-
-[type="checkbox"]:not(:checked) + label:after {
-    @apply opacity-0 scale-0;
-}
 
 label.gfield_consent_label {
     > a {
