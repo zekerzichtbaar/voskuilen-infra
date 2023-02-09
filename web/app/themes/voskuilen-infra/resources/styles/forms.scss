@@ -2,7 +2,8 @@
     @apply font-normal #{!important};
 }
 
-input {
+input,
+textarea {
     @apply p-4 border border-gray-200 #{!important};
 }
 

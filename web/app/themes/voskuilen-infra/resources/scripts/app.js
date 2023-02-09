@@ -12,6 +12,7 @@ domReady(async () => {
 
   // Hamburger menu
   $('#menuBtn').on('click', function() {
+    $('body').toggleClass('overflow-y-hidden');
     $('#hamburger').children('.icon-left').children('span').toggleClass('icon-left--line');
     $('#hamburger').children('.icon-right').children('span').toggleClass('icon-right--line');
     $('#menuScreen').toggleClass('-translate-y-full opacity-0');
@@ -75,6 +76,14 @@ domReady(async () => {
         spaceBetween: 20
       }
     },
+  });
+
+  const swiperFull = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    grabCursor: true,
+    preloadImages: true,
+    loop: true,
   });
 
   $('.counter').each(function() {
