@@ -43,7 +43,7 @@
           @if(get_field('social_icons', 'option'))
             @foreach(get_field('social_icons', 'option') as $item)
               <a href="{!! $item['url'] !!}" target="blank">
-                <div class="flex w-full h-full justify-center items-center border-2 border-white/10 p-3">
+                <div class="flex w-full h-full justify-center items-center border-2 border-white/10 hover:border-white/80 transition duration-300 ease-in-out p-3">
                   @if($item['icon'] == 'svg')
                     {!! $item['svg'] !!}
                   @else
@@ -66,7 +66,7 @@
           @endif
         </div>
         <div>
-          <p class="text-white/30">Realisatie door <a href="https://zekerzichtbaar.nl/" target="blank">Zeker Zichtbaar</a></p>
+          <p class="text-white/30">Realisatie door <a class="hover:text-white/80 transition duration-300 ease-in-out" href="https://zekerzichtbaar.nl/" target="blank">Zeker Zichtbaar</a></p>
         </div>
       </div>
     </div>

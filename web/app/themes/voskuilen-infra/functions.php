@@ -77,3 +77,18 @@ collect(['setup', 'filters', 'project', 'werknemer', 'news', 'helpers'])
 */
 
 add_theme_support('sage');
+
+
+add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
+function form_submit_button( $button, $form ) {
+return "
+<button>
+    <a class='group button button-primary z-30 mt-6 md:mt-10 gform_button' type='primary' id='gform_submit_button_{$form['id']}'>
+        <span>Verzenden</span>
+        <svg class='h-6 w-auto duration-150 group-hover:translate-x-3' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='#fff'>
+            <path stroke-linecap='round' stroke-linejoin='round' d='M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3'></path>
+        </svg>
+    </a>
+</button>
+";
+}

@@ -12,6 +12,7 @@ domReady(async () => {
 
   // Hamburger menu
   $('#menuBtn').on('click', function() {
+    $('body').toggleClass('overflow-y-hidden');
     $('#hamburger').children('.icon-left').children('span').toggleClass('icon-left--line');
     $('#hamburger').children('.icon-right').children('span').toggleClass('icon-right--line');
     $('#menuScreen').toggleClass('-translate-y-full opacity-0');
@@ -77,6 +78,14 @@ domReady(async () => {
     },
   });
 
+  const swiperFull = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    grabCursor: true,
+    preloadImages: true,
+    loop: true,
+  });
+
   $('.counter').each(function() {
     let id = $(this).attr('id');
     let val = $(this).text();
@@ -126,6 +135,19 @@ domReady(async () => {
 
   $('#projectFiltersToggle').on('click', function() {
     $('#projectFilters').toggleClass('collapsed');
+  });
+
+  $('.faq').on('click', function() {
+    // Reset all values
+    $(this).siblings().find('.question').siblings('.answer').slideUp(200);
+    $(this).siblings().find('.question').removeClass('text-black/30');
+    $(this).siblings().find('.faq-arrow').removeClass('rotate-180');
+    $(this).siblings().find('.faq-iteration').removeClass('!text-primary font-bold');
+    // Set all values
+    $(this).find('.question').siblings('.answer').slideToggle(200);
+    $(this).find('.question').toggleClass('text-black/30');
+    $(this).find('.faq-arrow').toggleClass('rotate-180');
+    $(this).find('.faq-iteration').toggleClass('!text-primary font-bold');
   });
 
 });

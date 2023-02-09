@@ -1,4 +1,7 @@
 <section class="relative {{ $pt }} {{ $pb }}">
+    @if($links && in_array('links', $content_items))
+        <svg class="absolute -z-10 inset-y-0 left-0 h-full w-full lg:w-[70%] text-offwhite" xmlns="http://www.w3.org/2000/svg" width="auto" height="full"><rect width="1510" height="1075" fill="currentColor" fill-rule="evenodd"/></svg>
+    @endif
     <div class="container">
         <div class="flex gap-12 md:gap-24 {{ $links ? "flex-col lg:flex-row" : "flex-col" }}">
             <div class="flex flex-col justify-center items-center {{ $layout == "text-image" ? "order-1" : "order-2" }}">
