@@ -54,15 +54,15 @@
         </button>
       </form>
     </div>
+    @if (! have_posts())
+      <x-alert type="warning">
+        {!! __('Sorry, er zijn geen resultaten gevonden.', 'voskuilen-infra') !!}
+      </x-alert>
+    @endif
   </div> 
   <div class="py-32 bg-white">
     <div class="container">
       <div class="grid grid-cols-12 gap-4 pb-12 border-b border-b-200 mb-6" style="grid-template-rows: repeat(auto-fit, 500px 500px 500px 500px 500px 500px)">
-        @if (! have_posts())
-          <x-alert type="warning">
-            {!! __('Sorry, no results were found.', 'sage') !!}
-          </x-alert>
-        @endif
         @while(have_posts()) @php(the_post())
           <div class="col-span-12 md:col-span-6">
             @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
