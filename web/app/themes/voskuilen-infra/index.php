@@ -41,7 +41,7 @@
       font-style: normal;
     }
   </style>
-  <body>
+  <body class="bg-offwhite">
     <?php wp_body_open(); ?>
     <?php do_action('get_header'); ?>
 
