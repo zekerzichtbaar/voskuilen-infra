@@ -28,22 +28,16 @@
     </div>
     <div id="projectFilters" class="overflow-hidden">
       <form class="flex flex-col items-start gap-6 border border-gray-200 p-6" method="GET">
-        <div class="flex flex-wrap">
-          <span class="w-full text-lg font-bold">{{ __('Categorieën:', 'voskuilen-infra')}}</span>
+        <div class="flex flex-wrap mb-3">
+          <span class="w-full text-lg font-bold border-b border-gray-200 pb-2 mb-3">{{ __('Categorieën:', 'voskuilen-infra')}}</span>
           @foreach(get_terms('project_category') as $category)
-            <label for="{{ $category->slug }}" class="relative text-gray-600 italic flex items-center text-lg mr-8 pl-8 cursor-pointer">
+            <label for="{{ $category->slug }}" class="relative text-gray-600 italic text-lg mr-8 pl-8 cursor-pointer">
               <input type="checkbox" name="cat[]" id="{{ $category->slug }}" value="{{ $category->slug }}" class="invisible absolute" {{ (!empty($active_categories) && in_array($category->slug, $active_categories) ? 'checked' : '')}}>
-              <div class="checkbox-facade h-6 w-6 aspect-square border border-gray-200 absolute left-0 flex">
+              <div class="checkbox-facade h-6 w-6 aspect-square border border-gray-300 absolute left-0 flex">
                 <div class="h-3 w-3 aspect-square m-auto bg-primary duration-150 opacity-0 scale-0"></div>
               </div>
               {{ $category->name}}
             </label>
-            {{-- <div class="relative">
-              <input type="checkbox" name="cat[]" id="{{ $category->slug }}" value="{{ $category->slug }}" {{ (!empty($active_categories) && in_array($category->slug, $active_categories) ? 'checked' : '')}}>
-              <label for="{{ $category->slug }}" class="relative text-gray-600 italic flex items-center text-lg mr-8 pl-8">
-                {{ $category->name}}
-              </label>
-            </div> --}}
           @endforeach
         </div>
         <button type="submit" class="button button-primary">
