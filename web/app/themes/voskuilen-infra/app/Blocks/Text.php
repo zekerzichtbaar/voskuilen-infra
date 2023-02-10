@@ -27,21 +27,21 @@ class Text extends Block
 
     public function with()
     {
-        // $pages = get_pages('child_of=' . $this->post->ID);
-        
-        // if (count($pages) > 0) {
-        //     $menu_items = $pages;
-        // }
-
         return [
           'pt'                      => get_field('padding_top'),
           'pb'                      => get_field('padding_bottom'),
+          'background'              => get_field('background'),
+          'width'                   => get_field('width'),
+          'text_type'               => get_field('text_type'),
+          'text_align'              => get_field('text_align'),
+          'content_items'           => get_field('content_items'),
           'menu_title'              => get_field('menu_title'),
           'menu_items'              => get_field('menu_items'),
-          'content_items'           => get_field('content_items'),
           'title'                   => get_field('title'),
           'heading'                 => get_field('heading'),
           'content'                 => get_field('content'),
+          'buttons'                 => get_field('buttons'),
+          'reference'               => get_field('reference'),
         ];
     }
 
