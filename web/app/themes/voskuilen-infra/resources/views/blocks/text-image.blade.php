@@ -1,4 +1,4 @@
-<section class="relative {{ $pt }} {{ $pb }}">
+<section class="relative {{ $pt }} {{ $pb }} bg-{{ $background }}">
     @if($links && in_array('links', $content_items))
         <svg class="absolute -z-10 inset-y-0 left-0 h-full w-full lg:w-[70%] text-offwhite" xmlns="http://www.w3.org/2000/svg" width="auto" height="full"><rect width="1510" height="1075" fill="currentColor" fill-rule="evenodd"/></svg>
     @endif
@@ -35,28 +35,13 @@
                     @endif
                 </div>
             </div>
-            @if($image_layout == "two-column")
-                <div class="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-4 {{ $layout == "text-image" ? "order-2" : "order-1" }}">
-                    @if($two_column_image_one)
-                        <div class="relative aspect-square bg-primary h-full w-full md:w-[40rem] lg:w-[30rem]">
-                            {!! wp_get_attachment_image( $two_column_image_one['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover object-center"] ) !!}
-                        </div>
-                    @endif
-                    @if($two_column_image_two)
-                        <div class="relative aspect-square md:aspect-video bg-primary h-full md:h-[50rem] w-full md:w-[40rem] lg:w-[30rem]">
-                            {!! wp_get_attachment_image( $two_column_image_two['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover object-center"] ) !!}
-                        </div>
-                    @endif
-                </div>
-            @else
-                <div class="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-4 {{ $layout == "text-image" ? "order-2" : "order-1" }} {{ $links ? "w-full" : "" }}">
-                    @if($one_column_image)
-                        <div class="relative bg-primary {{ $links ? "h-full md:h-[50rem] w-full md:w-[40rem] lg:w-[30rem] aspect-square md:aspect-video" : "h-full w-full aspect-video" }}">
-                            {!! wp_get_attachment_image( $one_column_image['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover object-center"] ) !!}
-                        </div>
-                    @endif
-                </div>
-            @endif
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-4 {{ $layout == "text-image" ? "order-2" : "order-1" }} {{ $links ? "w-full" : "" }}">
+                @if($one_column_image)
+                    <div class="relative bg-primary {{ $links ? "h-full md:h-[50rem] w-full md:w-[40rem] lg:w-[30rem] aspect-square md:aspect-video" : "h-full w-full aspect-video" }}">
+                        {!! wp_get_attachment_image( $one_column_image['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover object-center"] ) !!}
+                    </div>
+                @endif
+            </div>
         </div>
     </div>
 </section>

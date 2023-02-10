@@ -1,4 +1,4 @@
-<section class="relative border-[15px] md:border-[30px] border-offwhite py-32">
+<section class="relative py-32 {{ $pt }} {{ $pb }} bg-{{ $background }}">
     <div class="container">
         <div class="flex flex-col md:flex-row justify-between md:items-center mb-12">
             <{{ $heading }}>{{ $title }}</{{ $heading }}>

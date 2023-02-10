@@ -30,6 +30,7 @@ class TextImage extends Block
         return [
           'pt'                      => get_field('padding_top'),
           'pb'                      => get_field('padding_bottom'),
+          'background'              => get_field('background'),
           'layout'                  => get_field('layout'),
           'image_layout'            => get_field('image_layout'),
           'one_column_image'        => get_field('one_column_image'),
