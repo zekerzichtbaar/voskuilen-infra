@@ -29,10 +29,22 @@ class Projects extends Block
     {
         $project_count = get_field('project_count');
         $project_query_args = ['post_type' => 'project', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => $project_count];
+
+        
+        if(!empty($category = get_field('project_category'))) {
+            $project_query_args['tax_query'] = [[
+                'taxonomy' => 'project_category',
+                'terms' => $category
+            ]];
+        }
+
         $projects = new \WP_Query($project_query_args);
 
         return [
-            'title' => get_field('title'),
+            'pt'                      => get_field('padding_top'),
+            'pb'                      => get_field('padding_bottom'),
+            'background'              => get_field('background'),
+            'title'                   => get_field('title'),
             'heading' => get_field('heading'),
             'project_heading' => get_field('project_heading'),
             'projects' => $projects,
