@@ -1,4 +1,4 @@
-<header class="banner md:px-0 fixed py-[15px] md:py-12 z-30 w-full border-x-[15px] md:border-x-[30px] border-transparent">
+<header class="banner md:px-0 fixed py-[15px] md:py-12 z-30 w-full border-x-[15px] md:border-x-[30px] border-transparent transition-transform duration-300 bg-gradient-to-b from-black/50 to-transparent">
   <div class="container mx-auto text-white">
     <div class="flex justify-between items-center">
       <a class="brand md:-mt-[50px]" href="{{ home_url('/') }}">
@@ -40,7 +40,7 @@
       </div>
       <div class="flex flex-col">
         @if (has_nav_menu('secondary_navigation'))
-          {!! wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'text-white/60 font-normal flex flex-col gap-2 md:gap-4', 'echo' => false]) !!}
+          {!! wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'text-white/60 font-normal flex flex-col gap-2 md:gap-4 text-lg', 'echo' => false]) !!}
         @endif
       </div>
     </div>
@@ -57,7 +57,7 @@
       <img class="menu-image absolute inset-0 w-full h-full z-10 object-cover" src="@asset('images/menu-placeholder.png')">
       <div class="absolute left-4 2xl:left-16 flex flex-col justify-center h-full">
         <h3 class="text-white font-bold z-30">{!! get_field('title', 'option') !!}</h3>
-        <span class="text-white/70 z-30">{!! get_field('menu_content', 'option') !!}</span>
+        <span class="text-white z-30">{!! get_field('menu_content', 'option') !!}</span>
         <x-button class="z-30 mt-6 md:mt-10" type="primary" href="{{ home_url('/contact') }}">Neem contact op</x-button>
       </div>
     </div>

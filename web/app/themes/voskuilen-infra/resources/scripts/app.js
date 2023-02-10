@@ -150,6 +150,18 @@ domReady(async () => {
     $(this).find('.faq-iteration').toggleClass('!text-primary font-bold');
   });
 
+  var prevScrollpos = window.pageYOffset;
+  let header = $("header");
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      header.removeClass('-translate-y-full');
+    } else {
+      header.addClass('-translate-y-full');
+    }
+    prevScrollpos = currentScrollPos;
+  } 
+
 });
 
 /**
