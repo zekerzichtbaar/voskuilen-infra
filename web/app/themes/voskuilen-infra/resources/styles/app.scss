@@ -18,13 +18,12 @@ h3 {
 h4 {
   @apply text-lg sm:text-xl;
 }
-
 h5 {
   @apply text-lg;
 }
 
 section {
-    @apply py-12 md:py-24 lg:py-32;
+    @apply py-12 md:py-24 lg:py-32 xl:py-40;
 }
 
 #breadcrumbs span {
@@ -32,18 +31,9 @@ section {
 }
 
 .container {
-    // padding-left: 60px;
-    // padding-right: 60px;
     @screen 2xl {
         max-width: 1340px;
     }
-}
-
-.content {
-  @apply font-normal text-3xl leading-normal;
-  b {
-    @apply text-primary font-semibold;
-  }
 }
 
 #menu-footer-1,
@@ -86,26 +76,23 @@ section {
 
 #menu-highlighted {
   .menu-item{
-    @apply font-bold text-5xl md:text-6xl text-white;
-  }
-}
+    @apply font-bold text-5xl md:text-6xl text-white/50;
 
-.active {
-  @apply opacity-100;
+    &.current-menu-item {
+      @apply text-white;
+    }
+  }
 }
 
 .button {
   @apply relative inline-flex gap-4 justify-center items-center text-white uppercase font-bold text-base tracking-wide px-4 md:px-8 py-2 md:py-5;
 }
-
 .button-primary {
     @apply bg-primary;
 }
-
 .button-secondary {
     @apply bg-black;
 }
-
 .button-ghost {
     @apply px-0 py-0;
 }
@@ -127,20 +114,20 @@ section {
   }
 
 .icon-right {
-    &--line {
-      &:nth-child(1) {
-        @apply transform -rotate-45 translate-y-[0.290rem];
-      }
-  
-      &:nth-child(2) {
-        @apply opacity-0;
-      }
-  
-      &:nth-child(3) {
-        @apply transform rotate-45 -translate-y-[0.290rem];
-      }
+  &--line {
+    &:nth-child(1) {
+      @apply transform -rotate-45 translate-y-[0.290rem];
+    }
+
+    &:nth-child(2) {
+      @apply opacity-0;
+    }
+
+    &:nth-child(3) {
+      @apply transform rotate-45 -translate-y-[0.290rem];
     }
   }
+}
 
 .grid_template {
   grid-template-rows: auto auto auto auto auto auto auto auto;
@@ -159,15 +146,24 @@ section {
   }
 }
 
-.banner {
-  background-image: linear-gradient(rgba(0, 0, 0, var(--gradient)), transparent);
-}
-
 #projectFilters {
   transition: max-height .5s ease-in-out;
   max-height: 300px;
 
   &.collapsed {
     max-height: 0px;
+  }
+}
+
+.prose-lg ul {
+  @apply pl-0;
+
+  li {
+    @apply pl-5 relative;
+    
+    &:before {
+      @apply h-2 w-2 bg-primary inline-block absolute left-0 top-[12px];
+      content: " ";
+    }
   }
 }
