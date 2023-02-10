@@ -1,19 +1,8 @@
 <article @php(post_class())>
-  <header>
-    <h1 class="entry-title">
-      {!! $title !!}
-    </h1>
-
-    @include('partials.entry-meta')
-  </header>
-
-  <div class="entry-content">
-    @php(the_content())
+  <div class="w-full max-w-3xl mx-auto px-6 animate-marque">
+    <div class="pt-24 pb-16 flex justify-between">
+      @include('partials.entry-meta')
+    </div>
   </div>
-
-  <footer>
-    {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
-  </footer>
-
-  @php(comments_template())
+    @php(the_content())
 </article>
