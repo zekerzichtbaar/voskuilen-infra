@@ -28,6 +28,11 @@ class News extends Block
     public function with()
     {
         $news_query_args = ['post_type' => 'post', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => -1];
+
+        if(!empty($category = get_field('news_category'))) {
+            $news_query_args['cat'] = $category;
+        }
+
         $news = new \WP_Query($news_query_args);
 
         return [
