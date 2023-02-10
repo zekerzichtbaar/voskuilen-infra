@@ -1,6 +1,6 @@
 <article @php(post_class('relative w-full h-full overflow-hidden group min-h-[300px]'))>
   {!! wp_get_attachment_image(get_post_thumbnail_id(), 'large', false, ['class' => 'absolute inset-0 w-full h-full object-center object-cover duration-300 group-hover:scale-[1.1]']) !!}
-  <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+  <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-black/60 via-transparent via-transparent to-black/60"></div>
   <a href="{{ get_permalink() }}" class="flex flex-col absolute inset-0 w-full h-full p-10 text-white">
     <div class="flex align-start">
       @if(true)
