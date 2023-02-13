@@ -52,7 +52,7 @@
                         </div>
                         <span class="mt-8 leading-[50px] font-bold">{!! $content !!}</span>
                         @if($reference)
-                            <span class="mt-8 text-base text-lg tracking-wide">{{ $reference }}</span>
+                            <span class="mt-8 text-lg tracking-wide">{{ $reference }}</span>
                         @endif
                     </div>
 
