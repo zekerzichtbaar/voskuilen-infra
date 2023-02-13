@@ -163,3 +163,23 @@ add_action( 'pre_get_posts', function( $query ) {
     }
     return $query;
 });
+
+add_shortcode('cta', function($attributes) {
+    $cta_post = get_post($attributes['post_id']);
+    $output =   '<div class="bg-offwhite float-left w-64 group text-base mx-20 my-8 -ml-12">
+                    <div class="relative w-full aspect-video">'. 
+                        wp_get_attachment_image( get_post_thumbnail_id($cta_post->ID), 'medium', false, ["class" => "w-full h-full my-0 absolute inset-0 object-cover object-center"] ) .
+                    '</div>
+                    <div class="p-6"><div class="mb-4 font-semibold">'.
+                        $cta_post->post_title .
+                        '</div><div class="flex justify-between items-center">
+                            <span>Lees meer</span>
+                            <svg class="group-hover:translate-x-3 h-6 duration-300 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="w-6 h-6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>';
+
+    return $output;
+}); 
