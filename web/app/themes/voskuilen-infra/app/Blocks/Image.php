@@ -32,9 +32,10 @@ class Image extends Block
           'pt'                      => get_field('padding_top'),
           'pb'                      => get_field('padding_bottom'),
           'layout'                  => get_field('layout'),
+          'width'                   => get_field('width'),
           'content_items'           => get_field('content_items'),
           'images'                  => get_field('images'),
-          'image'                  => get_field('image'),
+          'image'                   => get_field('image'),
         ];
     }
 

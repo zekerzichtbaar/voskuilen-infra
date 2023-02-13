@@ -55,13 +55,26 @@
                 </div>
             @endforeach
         </div>
-    @elseif($layout == 'single_wide')
-        <div class="container px-5">
+    @elseif($layout == 'single')
+        <div class="{{ $width == 'wide' ? 'container' : 'px-5' }}">
             {!! wp_get_attachment_image($image['ID'], isset($size), false, ['class' => 'w-full aspect-video object-cover object-center']) !!}
         </div>
-    @elseif($layout == 'single_full')
-        <div class="w-full px-5">
-            {!! wp_get_attachment_image($image['ID'], isset($size), false, ['class' => 'w-full aspect-video object-cover object-center']) !!}
-        </div>
+    @elseif($layout == 'slider')
+        <!-- Slider main container -->
+        <div class="{{ $width == 'wide' ? 'container' : 'px-5' }} swiper swiper-slider">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                @foreach($images as $image)
+                    <div class="swiper-slide">
+                        {!! wp_get_attachment_image($image['ID'], isset($size), false, ['class' => 'w-full aspect-video object-cover object-center']) !!}
+                    </div>
+                @endforeach
+            </div>
+            <!-- If we need pagination -->
+            <div class="container flex mt-4">
+                <div class="ml-auto swiper-pagination"></div>
+            </div>
+        </div>  
     @endif
 </section>

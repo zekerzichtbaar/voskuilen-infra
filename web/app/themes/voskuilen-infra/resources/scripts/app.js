@@ -54,7 +54,7 @@ domReady(async () => {
 
   Swiper.use([Pagination]);
 
-  const swiper = new Swiper('.swiper',  {
+  const swiper = new Swiper('.swiper-news',  {
     slidesPerView: 3,
     spaceBetween: 20,
     grabCursor: true,
@@ -78,12 +78,16 @@ domReady(async () => {
     },
   });
 
-  const swiperFull = new Swiper(".mySwiper", {
+  const swiperFull = new Swiper(".swiper-slider", {
     slidesPerView: 1,
-    spaceBetween: 20,
     grabCursor: true,
     preloadImages: true,
     loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
   });
 
   $('.counter').each(function() {
