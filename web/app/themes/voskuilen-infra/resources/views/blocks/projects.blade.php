@@ -4,7 +4,7 @@
             <{{ $heading }}>{{ $title }}</{{ $heading }}>
             <x-button class="self-end" type="primary" href="/projecten/">{{ __('Naar alle projecten', 'voskuilen-infra') }}</x-button>
         </div>
-        <div class="grid grid-cols-12 gap-4" style="grid-template-rows: repeat(auto-fit, 400px 500px 400px 500px 400px 500px">
+        <div class="grid grid-cols-12 gap-5" style="grid-template-rows: repeat(auto-fit, 400px 500px 400px 500px 400px 500px">
             @php($index = 0)
 
             @while($item = $projects->have_posts()) @php($projects->the_post())
