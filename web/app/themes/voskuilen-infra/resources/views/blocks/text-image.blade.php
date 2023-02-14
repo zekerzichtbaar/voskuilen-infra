@@ -1,7 +1,7 @@
 <section class="relative {{ $pt }} {{ $pb }} bg-{{ $background }}">
     @if($layout == 'horizontal')
-        <div class="container relative py-32">
-            <div class="breakout-container bg-{{ $background == 'white' ? 'offwhite' : 'white'}} h-full absolute right-[18rem] top-1/2 -translate-y-1/2 z-0"></div>
+        <div class="container relative py-16 md:py-24 lg:py-32">
+            <div class="w-full breakout-container bg-{{ $background == 'white' ? 'offwhite' : 'white'}} h-full absolute right-40 md:right-[18rem] top-1/2 -translate-y-1/2 z-0"></div>
             <div class="flex justify-between gap-12 md:gap-24 relative z-10">
                 <div class="flex flex-col justify-center items-center">
                     <div class="max-w-lg">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-4">
-                    <div class="relative bg-primary {{ $links ? "h-full md:h-[50rem] w-full md:w-[36rem] aspect-square md:aspect-video" : "h-full w-full aspect-video" }}">
+                    <div class="relative bg-primary {{ $links ? "h-full lg:h-[50rem] w-full lg:w-[36rem] aspect-square md:aspect-video" : "h-full w-full aspect-video" }}">
                         {!! wp_get_attachment_image( $image['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover object-center"] ) !!}
                     </div>
                 </div>
