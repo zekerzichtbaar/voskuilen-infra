@@ -1,9 +1,9 @@
-<article @php(post_class('relative w-full h-full overflow-hidden group min-h-[300px]'))>
+<article @php(post_class('relative w-full h-full overflow-hidden group min-h-[300px] md:min-h-min'))>
   {!! wp_get_attachment_image(get_post_thumbnail_id(), 'large', false, ['class' => 'absolute inset-0 w-full h-full object-center object-cover duration-300 group-hover:scale-[1.1]']) !!}
   <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-black/60 via-transparent via-transparent to-black/60"></div>
-  <a href="{{ get_permalink() }}" class="flex flex-col absolute inset-0 w-full h-full p-10 text-white">
+  <a href="{{ get_permalink() }}" class="flex flex-col absolute inset-0 w-full h-full p-6 sm:p-10 text-white">
     <div class="flex align-start">
-      @if(true)
+      @if(get_field('contains_video', get_the_ID()))
         <div class="flex items-center justify-center self-start aspect-square p-1.5 border-white border-[2px]">
           <svg width="12" height="12" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" fill="white"/>
