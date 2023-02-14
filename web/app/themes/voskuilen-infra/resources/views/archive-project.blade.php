@@ -26,7 +26,7 @@
         </svg>
       </x-button>
     </div>
-    <div id="projectFilters" class="overflow-hidden">
+    <div id="projectFilters" class="overflow-hidden collapsed">
       <form class="flex flex-col items-start gap-6 border border-gray-200 p-6" method="GET">
         <div class="flex flex-wrap mb-3">
           <span class="w-full text-lg font-bold border-b border-gray-200 pb-2 mb-3">{{ __('Categorieën:', 'voskuilen-infra')}}</span>
