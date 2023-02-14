@@ -22,7 +22,7 @@
                         
                         @elseif($grid_item['acf_fc_layout'] == 'page_links')
                         
-                            <div class="h-full p-10 lg:p-16 xl:p-20 bg-white">
+                            <div class="h-full p-6 sm:p-10 lg:p-16 xl:p-20 bg-white">
                                 <h3 class="mb-3">{{ $grid_item['title'] }}</h3>
                                 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
                                     @foreach($grid_item['selected_pages'] as $page)
@@ -42,10 +42,11 @@
                             
                             <div class="grid grid-cols-2 grid-rows-2 gap-5">
                                 @foreach($grid_item['expertises'] as $expertise)
-                                    <a href="{{ $expertise['link']['url'] }}" class="bg-white aspect-square flex flex-col p-6 xl:p-10 group">
-                                        {!! $expertise['icon'] !!}
-
-                                        <h3 class="mt-auto md:mt-2 lg:mt-auto mb-2 lg:mb-6">{{ $expertise['link']['title'] }}</h3>
+                                    <a href="{{ $expertise['link']['url'] }}" class="bg-white aspect-square flex flex-col p-6 sm:p-10 md:p-6 xl:p-10 group">
+                                        <div class="w-5 sm:w-7 md:w-5 lg:w-7">
+                                            {!! $expertise['icon'] !!}
+                                        </div>
+                                        <h3 class="mt-auto lg:mb-6">{{ $expertise['link']['title'] }}</h3>
                                         <div class="flex item-center justify-between">
                                             <span class="text-sm lg:text-base">{{ __('Expertise bekijken', 'voskuilen-infra') }}</span>
                                             <svg class="group-hover:translate-x-3 h-6 duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="w-6 h-6">
@@ -72,7 +73,7 @@
                             
                         @elseif($grid_item['acf_fc_layout'] == 'text')
 
-                            <a href="{{ $grid_item['link']['url'] }}" class="flex flex-col h-full items-start justify-between p-10 bg-primary text-white group">
+                            <a href="{{ $grid_item['link']['url'] }}" target="{{ $grid_item['link']['target'] }}" class="flex flex-col h-full items-start justify-between p-6 sm:p-10 bg-primary text-white group">
                                 <h3 class="mb-6">{{ $grid_item['title'] }}</h3>
                                 <div class="flex item-center justify-between w-full">
                                     <div>{!! $grid_item['text'] !!}</div>
