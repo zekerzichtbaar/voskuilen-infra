@@ -1,5 +1,5 @@
 <section class="relative {{ $pt }} {{ $pb }} bg-{{ $background }}">
-    <div class="container flex justify-center gap-[8rem]">
+    <div class="container flex flex-col lg:flex-row justify-center gap-12 md:gap-[8rem]">
         @if(in_array('menu', $content_items) && $menu_title && $menu_items)
             <div class="flex flex-col">
                 <span class="text-2xl font-semibold">{{ $menu_title }}</span>
@@ -40,7 +40,7 @@
                     @if($title && in_array('title', $content_items))
                         <{{ $heading }} class="mb-6">{{ $title }}</{{ $heading }}>
                     @endif
-                    <div class="prose font-normal text-3xl leading-normal prose-strong:text-primary prose-strong:font-semibold">
+                    <div class="prose text-xl md:text-3xl prose-p:leading-[2.75rem] prose-strong:text-primary prose-strong:font-semibold">
                         {!! $content !!}
                     </div>
 
@@ -56,12 +56,12 @@
                         @endif
                     </div>
 
-                @elseif($text_type == 'large')
+                @elseif($text_type == 'normal')
 
                     @if($title && in_array('title', $content_items))
                         <{{ $heading }} class="mb-6">{{ $title }}</{{ $heading }}>
                     @endif
-                    <div class="prose">
+                    <div>
                         {!! $content !!}
                     </div>
 
