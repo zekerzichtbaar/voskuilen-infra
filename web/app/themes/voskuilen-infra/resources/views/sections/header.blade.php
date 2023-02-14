@@ -32,17 +32,20 @@
 <div id="menuScreen" class="fixed -translate-y-full opacity-0 w-full z-20 h-screen bg-black transition duration-300 ease-in-out">
   <div class="container">
     <div class="flex flex-col sm:flex-row gap-12 md:gap-24 2xl:gap-40 justify-center lg:justify-start sm:items-center h-screen">
-      <div class="highlight-nav flex flex-col">
+
+      <div id="menu-highlighted-wrapper" class="ease-in-out duration-300 delay-[400ms] -translate-y-4 opacity-0 flex flex-col">
         <span class="font-normal text-lg text-white/80 mb-4 md:mb-8">Wat we doen</span>
         @if (has_nav_menu('highlighted_navigation'))
-          {!! wp_nav_menu(['theme_location' => 'highlighted_navigation', 'menu_class' => 'font-bold flex flex-col gap-2 md:gap-4', 'echo' => false]) !!}
+          {!! wp_nav_menu(['theme_location' => 'highlighted_navigation', 'menu_class' => 'delay-300 font-bold flex flex-col gap-2 md:gap-4', 'echo' => false]) !!}
         @endif
       </div>
-      <div class="flex flex-col">
+
+      <div id="menu-secondary-wrapper" class="ease-in-out duration-300 delay-[500ms] -translate-y-4 opacity-0 flex flex-col">
         @if (has_nav_menu('secondary_navigation'))
           {!! wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'text-white/60 font-normal flex flex-col gap-2 md:gap-4 text-lg', 'echo' => false]) !!}
         @endif
       </div>
+
     </div>
     <div class="hidden lg:block absolute right-0 top-0 w-[30%] bg-primary h-full">
       <div class="absolute inset-0 z-30 bg-gradient-to-r from-black to-transparent"></div> 
@@ -55,7 +58,8 @@
           }
         @endphp
       <img class="menu-image absolute inset-0 w-full h-full z-10 object-cover" src="@asset('images/menu-placeholder.png')">
-      <div class="absolute left-4 2xl:left-16 flex flex-col justify-center h-full">
+      
+      <div id="menu-contact-info" class="absolute z-30 left-4 2xl:left-16 flex flex-col justify-center h-full ease-in-out duration-300 delay-[600ms] -translate-y-4 opacity-0">
         <h3 class="text-white font-bold z-30">{!! get_field('title', 'option') !!}</h3>
         <span class="text-white z-30">{!! get_field('menu_content', 'option') !!}</span>
         <x-button class="z-30 mt-6 md:mt-10" type="primary" href="{{ home_url('/contact') }}">Neem contact op</x-button>
