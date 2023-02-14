@@ -166,11 +166,11 @@ add_action( 'pre_get_posts', function( $query ) {
 
 add_shortcode('cta', function($attributes) {
     $cta_post = get_post($attributes['post_id']);
-    $output =   '<div class="bg-offwhite float-left w-64 group text-base mx-20 my-8 -ml-12">
+    $output =   '<a href="'. get_permalink($cta_post->ID) .'" class="bg-offwhite md:float-left md:w-64 group text-base md:mx-20 my-8 md:-ml-12">
                     <div class="relative w-full aspect-video">'. 
                         wp_get_attachment_image( get_post_thumbnail_id($cta_post->ID), 'medium', false, ["class" => "w-full h-full my-0 absolute inset-0 object-cover object-center"] ) .
                     '</div>
-                    <div class="p-6"><div class="mb-4 font-semibold">'.
+                    <div class="p-8 md:p-6"><div class="mb-4 font-semibold">'.
                         $cta_post->post_title .
                         '</div><div class="flex justify-between items-center">
                             <span>Lees meer</span>
@@ -179,7 +179,7 @@ add_shortcode('cta', function($attributes) {
                             </svg>
                         </div>
                     </div>
-                </div>';
+                </a>';
 
     return $output;
 }); 
