@@ -9,30 +9,30 @@
             </div>
         </div>
     @elseif($layout == 'two_diagonal')
-        <div class="container grid grid-cols-12">
-            <div class="relative col-span-12 lg:col-span-7 z-10">
-                {!! wp_get_attachment_image( $images[0]['ID'], isset($size), "", ["class" => "aspect-video object-cover object-center border-". $background ." border-r-[1.25rem] border-b-[1.25rem]"] ) !!}
+        <div class="container grid grid-cols-12 sm:gap-8 lg:gap-0">
+            <div class="relative col-span-12 sm:col-span-11 lg:col-span-7 z-10 mb-8 sm:mb-0">
+                {!! wp_get_attachment_image( $images[0]['ID'], isset($size), "", ["class" => "aspect-video object-cover object-center border-". $background ." lg:border-r-[1.25rem] lg:border-b-[1.25rem]"] ) !!}
                 <div class="flex flex-col">
-                    <span class="text-lg">Dit is een titel</span>
-                    <span>Wij werken veilig of we werken niet</span>
+                    <span class="text-lg">{{ $images[0]['title'] }}</span>
+                    <span>{{ $images[0]['caption'] }}</span>
                 </div>
             </div>
-            <div class="relative col-span-12 col-start-6 lg:col-end-13 -translate-y-1/2">
+            <div class="relative col-span-12 sm:col-start-2 sm:col-end-13 lg:col-start-6 lg:col-end-13 lg:-mt-48">
                 <div class="flex flex-col text-right">
-                    <span class="text-lg">Dit is een titel</span>
-                    <span>Wij werken veilig of we werken niet</span>
+                    <span class="text-lg">{{ $images[1]['title'] }}</span>
+                    <span>{{ $images[1]['caption'] }}</span>
                 </div>
-                {!! wp_get_attachment_image( $images[1]['ID'], isset($size), "", ["class" => "aspect-video object-cover object-center border-". $background ." border-t-[1.25rem] border-l-[1.25rem]"] ) !!}
+                {!! wp_get_attachment_image( $images[1]['ID'], isset($size), "", ["class" => "aspect-video object-cover object-center border-". $background ." lg:border-t-[1.25rem] lg:border-l-[1.25rem]"] ) !!}
             </div>
         </div>
     @elseif($layout == 'two_by_two')
         <div class="container grid grid-cols-12">
             @php
                 $classes = [
-                    'col-start-1 col-end-7',
-                    'col-start-9 col-end-13',
-                    'col-start-1 col-end-5',
-                    'col-start-7 col-end-13'
+                    'col-span-12 sm:col-start-1 sm:col-end-7',
+                    'col-span-12 sm:col-start-9 sm:col-end-13',
+                    'col-span-12 sm:col-start-1 sm:col-end-5',
+                    'col-span-12 sm:col-start-7 sm:col-end-13'
                 ];
                 $sizes = [
                     'aspect-[3/4]',
@@ -44,7 +44,7 @@
             @foreach ($images as $image)
                 <div class="flex flex-col mb-8 justify-center {{ $classes[$loop->index] }}">
                     {!! wp_get_attachment_image($image['ID'], isset($size), false, ['class' => 'w-full object-cover object-center '. $sizes[$loop->index]]) !!}
-                    <div class="flex flex-col mt-5">
+                    <div class="flex flex-col mt-3 sm:mt-5">
                         <span class="text-lg">
                             {{ $image['title'] }}
                         </span>
