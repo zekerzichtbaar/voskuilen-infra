@@ -56,7 +56,7 @@
   </div> 
   <div class="py-32 bg-white">
     <div class="container">
-      <div class="grid grid-cols-12 gap-4 pb-12 border-b border-b-200 mb-6" style="grid-template-rows: repeat(auto-fit, 500px 500px 500px 500px 500px 500px)">
+      <div class="grid grid-cols-12 gap-5 pb-12 border-b border-b-200 mb-6" style="grid-template-rows: repeat(auto-fit, 500px 500px 500px 500px 500px 500px)">
         @while(have_posts()) @php(the_post())
           <div class="col-span-12 md:col-span-6">
             @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
