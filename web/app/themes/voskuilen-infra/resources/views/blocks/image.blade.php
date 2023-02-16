@@ -1,5 +1,7 @@
 <section class="relative {{ $pt }} {{ $pb }} bg-{{ $background }}">
     @if($layout == 'two_column')
+        <div class="absolute w-full h-1/2 inset-x-0 top-0 bg-{{$bg_top}}"></div>
+        <div class="absolute w-full h-1/2 inset-x-0 bottom-0 bg-{{$bg_bottom}}"></div>
         <div class="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-4">
             <div class="relative aspect-square bg-primary h-full w-full md:w-[40rem] lg:w-[30rem]">
                 {!! wp_get_attachment_image( $images[0]['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover object-center"] ) !!}
@@ -11,7 +13,7 @@
     @elseif($layout == 'two_diagonal')
         <div class="container grid grid-cols-12 sm:gap-8 lg:gap-0">
             <div class="relative col-span-12 sm:col-span-11 lg:col-span-7 z-10 mb-8 sm:mb-0">
-                {!! wp_get_attachment_image( $images[0]['ID'], isset($size), "", ["class" => "aspect-video object-cover object-center border-". $background ." lg:border-r-[1.25rem] lg:border-b-[1.25rem]"] ) !!}
+                {!! wp_get_attachment_image( $images[0]['ID'], isset($size), "", ["class" => "aspect-video object-cover object-center lg:border-r-[1.25rem] lg:border-b-[1.25rem] border-". $background] ) !!}
                 <div class="flex flex-col">
                     <span class="text-lg">{{ $images[0]['title'] }}</span>
                     <span>{{ $images[0]['caption'] }}</span>
@@ -22,7 +24,7 @@
                     <span class="text-lg">{{ $images[1]['title'] }}</span>
                     <span>{{ $images[1]['caption'] }}</span>
                 </div>
-                {!! wp_get_attachment_image( $images[1]['ID'], isset($size), "", ["class" => "aspect-video object-cover object-center border-". $background ." lg:border-t-[1.25rem] lg:border-l-[1.25rem]"] ) !!}
+                {!! wp_get_attachment_image( $images[1]['ID'], isset($size), "", ["class" => "aspect-video object-cover object-center lg:border-t-[1.25rem] lg:border-l-[1.25rem] border-". $background] ) !!}
             </div>
         </div>
     @elseif($layout == 'two_by_two')
@@ -56,10 +58,20 @@
             @endforeach
         </div>
     @elseif($layout == 'single')
-        <div class="{{ $width == 'wide' ? 'container' : 'px-5' }}">
+        <div class="absolute w-full h-1/2 inset-x-0 top-0 bg-{{$bg_top}}"></div>
+        <div class="absolute w-full h-1/2 inset-x-0 bottom-0 bg-{{$bg_bottom}}"></div>
+        @if($width == 'wide')
+            <div class="relative container">
+        @elseif($width == 'small')
+            <div class="relative max-w-3xl mx-auto">
+        @elseif($width == 'full')
+            <div class="relative px-5">
+        @endif
             {!! wp_get_attachment_image($image['ID'], isset($size), false, ['class' => 'w-full aspect-video object-cover object-center']) !!}
         </div>
     @elseif($layout == 'slider')
+        <div class="absolute w-full h-1/2 inset-x-0 top-0 bg-{{$bg_top}}"></div>
+        <div class="absolute w-full h-1/2 inset-x-0 bottom-0 bg-{{$bg_bottom}}"></div>
         <!-- Slider main container -->
         <div class="{{ $width == 'wide' ? 'container' : 'px-5' }} swiper swiper-slider">
             <!-- Additional required wrapper -->

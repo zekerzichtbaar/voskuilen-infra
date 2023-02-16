@@ -1,4 +1,6 @@
 <section class="relative {{ $pt }} {{ $pb }}">
+    <div class="absolute w-full h-1/2 inset-x-0 top-0 bg-{{$bg_top}}"></div>
+    <div class="absolute w-full h-1/2 inset-x-0 bottom-0 bg-{{$bg_bottom}}"></div>
     <div class="container">
         <div class="flex justify-center items-center">
             <div class="relative w-full h-full aspect-video">
@@ -9,8 +11,10 @@
                         </svg>
                     </div>
                 </div>
-                <video id="video" class="w-full h-full" src="{!! $video_url !!}"></video>
-                {!! wp_get_attachment_image( $placeholder['ID'], isset($size), "", ["class" => "placeholder w-full h-full absolute inset-0 object-cover"] ) !!}
+                <video id="video" class="w-full h-full" src="{!! (!empty($video_url) ? $video_url : '') !!}"></video>
+                @if(!empty($placeholder))
+                    {!! wp_get_attachment_image( $placeholder['ID'], isset($size), "", ["class" => "placeholder w-full h-full absolute inset-0 object-cover"] ) !!}
+                @endif
                 <div class="absolute inset-0 bg-black/20"></div>
                 <div class="hidden controls">
                     <div id="togglePlayBtn" class="bg-primary p-3 md:p-4 absolute -bottom-12 md:-bottom-14 right-0">

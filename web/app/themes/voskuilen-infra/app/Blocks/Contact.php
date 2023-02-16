@@ -30,12 +30,12 @@ class Contact extends Block
         return [
           'pt'                  => get_field('padding_top'),
           'pb'                  => get_field('padding_bottom'),
+          'background'          => get_field('background'),
           'content_items'       => get_field('content_items'),
           'title'               => get_field('title'),
           'form'                => get_field('form'),
           'buttons'             => get_field('buttons'),
           'office_content'      => get_field('office_content'),
-          'image'               => get_field('image'),
         ];
     }
 

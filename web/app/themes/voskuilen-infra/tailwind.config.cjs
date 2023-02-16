@@ -4,6 +4,10 @@ module.exports = {
   safelist: [
     'pt-0',
     'pb-0',
+    'bg-offwhite',
+    'bg-white',
+    'border-offwhite',
+    'border-white',
   ],
   theme: {
     extend: {

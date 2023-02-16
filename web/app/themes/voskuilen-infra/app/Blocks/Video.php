@@ -30,6 +30,8 @@ class Video extends Block
         return [
           'pt'                  => get_field('padding_top'),
           'pb'                  => get_field('padding_bottom'),
+          'bg_top'              => get_field('bg_top'),
+          'bg_bottom'           => get_field('bg_bottom'),
           'placeholder'         => get_field('placeholder'),
           'video_url'           => get_field('video_url'),
         ];

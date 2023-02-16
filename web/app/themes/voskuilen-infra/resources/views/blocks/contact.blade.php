@@ -1,6 +1,6 @@
-<section class="relative {{ $pt }} {{ $pb }}">
+<section class="relative {{ $pt }} {{ $pb }} bg-{{ $background }}">
     <div class="container">
-        <div class="flex flex-col mx-auto {{ $form ? "max-w-3xl" : "max-w-4xl" }}">
+        <div class="flex flex-col mx-auto max-w-3xl">
             @if($title && in_array('title', $content_items))
                 <h2 class="text-left mb-4 md:mb-12">{{ $title }}</h2>
             @endif
@@ -29,11 +29,6 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
-            @endif
-            @if($image && in_array('image', $content_items))
-                <div class="relative aspect-video my-4 md:my-10 bg-primary h-full w-full">
-                    {!! wp_get_attachment_image( $image['ID'], isset($size), "", ["class" => "w-full h-full absolute inset-0 object-cover object-center"] ) !!}
                 </div>
             @endif
         </div>

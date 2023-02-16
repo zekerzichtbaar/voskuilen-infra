@@ -29,6 +29,8 @@ class Image extends Block
     {
         return [
           'background'              => get_field('background'),
+          'bg_top'                  => get_field('bg_top'),
+          'bg_bottom'               => get_field('bg_bottom'),
           'pt'                      => get_field('padding_top'),
           'pb'                      => get_field('padding_bottom'),
           'layout'                  => get_field('layout'),
