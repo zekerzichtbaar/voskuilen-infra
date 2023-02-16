@@ -9,10 +9,10 @@
                             <h3 class="mb-6">{{ $title }}</h3>
                         @endif
                         @if($content && in_array('content', $content_items))
-                            <span class="prose">{!! $content !!}</span>
+                            <span class="prose-lg">{!! $content !!}</span>
                         @endif
                         @if($links && in_array('links', $content_items))
-                            <ul class="mt-12 flex flex-col gap-4">
+                            <ul class="mt-12 flex flex-col gap-4 text-lg">
                                 @foreach($links as $link)
                                     <a href="{{ $link['item']['url'] }}">
                                         <li class="relative flex items-center gap-3 border-b border-gray-200 pb-3 group">
